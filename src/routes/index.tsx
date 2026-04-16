@@ -1,6 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import logoEspaco from "@/assets/logo-espaco.png";
 import logoPequeno from "@/assets/logo-pequeno.png";
 import fotoSobreMim from "@/assets/foto-sobremim.jpeg";
@@ -29,7 +50,9 @@ import {
   Phone,
   ChevronDown,
   CheckCircle2,
+  CalendarIcon,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   component: Index,
