@@ -71,7 +71,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <button onClick={() => scrollTo("#inicio")} className="font-display text-xl font-semibold text-foreground tracking-tight">
-          Dra. Maria Colomba
+          Espaço Terapêutico Perdizes
         </button>
 
         {/* Desktop nav */}
@@ -137,7 +137,7 @@ function Hero() {
         </div>
         <div className="flex flex-1 justify-center">
           <div className="aspect-[3/4] w-64 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-80 flex items-center justify-center p-6">
-            <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-auto object-contain rounded-xl shadow-xl" />
+            <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-auto object-contain rounded-xl shadow-2xl opacity-65" />
           </div>
         </div>
       </div>
@@ -272,7 +272,7 @@ function Footer() {
     <footer className="border-t border-border/50 bg-card py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
-          <p className="font-display text-lg font-semibold text-foreground">Dra. Maria Colomba</p>
+          <p className="font-display text-lg font-semibold text-foreground">Espaço Terapêutico Perdizes</p>
           <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 00/123456</p>
         </div>
         <div className="flex items-center gap-6">
