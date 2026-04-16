@@ -485,6 +485,7 @@ function Index() {
       <About />
       <Specialties />
       <Approach />
+      <BookingForm />
       <Faq />
       <Footer />
       <WhatsAppFloat />
