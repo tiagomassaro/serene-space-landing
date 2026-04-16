@@ -58,7 +58,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511970891810?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.";
+const WHATSAPP_NUMBER = "5511962250790";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.`;
 
 const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
