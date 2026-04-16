@@ -66,8 +66,8 @@
   --gold-light: oklch(0.71 0.12 90 / 15%);
   /* Dark charcoal from logo figures #2D2D2D */
   --warm: oklch(0.25 0 0);
-  /* Light sage-tinted background */
-  --background: oklch(0.96 0.015 160);
+  /* Green background matching logo */
+  --background: oklch(0.92 0.035 160);
   --foreground: oklch(0.25 0 0);
   --card: oklch(0.98 0.008 160);
   --card-foreground: oklch(0.25 0 0);
