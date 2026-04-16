@@ -1,6 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import logoEspaco from "@/assets/logo-espaco.png";
 import logoPequeno from "@/assets/logo-pequeno.png";
 import fotoSobreMim from "@/assets/foto-sobremim.jpeg";
@@ -29,13 +50,16 @@ import {
   Phone,
   ChevronDown,
   CheckCircle2,
+  CalendarIcon,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511970891810?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.";
+const WHATSAPP_NUMBER = "5511962250790";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.`;
 
 const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
@@ -83,7 +107,7 @@ function Header() {
               {item.label}
             </button>
           ))}
-          <Button onClick={() => window.open(WHATSAPP_URL, "_blank")} className="rounded-2xl bg-primary px-6 text-primary-foreground hover:bg-primary/90">
+          <Button onClick={() => scrollTo("#agendar")} className="rounded-2xl bg-primary px-6 text-primary-foreground hover:bg-primary/90">
             Agendar Consulta
           </Button>
         </nav>
@@ -103,7 +127,7 @@ function Header() {
                   {item.label}
                 </button>
               ))}
-              <Button onClick={() => window.open(WHATSAPP_URL, "_blank")} className="mt-4 rounded-2xl bg-primary text-primary-foreground">
+              <Button onClick={() => { scrollTo("#agendar"); setOpen(false); }} className="mt-4 rounded-2xl bg-primary text-primary-foreground">
                 Agendar Consulta
               </Button>
             </nav>
@@ -128,7 +152,7 @@ function Hero() {
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
-              onClick={() => window.open(WHATSAPP_URL, "_blank")}
+              onClick={() => scrollTo("#agendar")}
               className="flex items-center gap-2 rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
             >
               <MessageCircle className="h-5 w-5" />
@@ -265,7 +289,153 @@ function Faq() {
   );
 }
 
-/* ─── Footer ─── */
+/* ─── Booking Form ─── */
+const bookingSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, { message: "Informe seu nome completo." })
+    .max(100, { message: "Nome muito longo." }),
+  date: z.date({ required_error: "Selecione uma data sugerida." }),
+  phone: z
+    .string()
+    .trim()
+    .min(8, { message: "Informe um telefone válido." })
+    .max(20, { message: "Telefone muito longo." })
+    .regex(/^[0-9()+\-.\s]+$/, { message: "Use apenas números e ( ) + - ." }),
+});
+
+type BookingValues = z.infer<typeof bookingSchema>;
+
+function BookingForm() {
+  const form = useForm<BookingValues>({
+    resolver: zodResolver(bookingSchema),
+    defaultValues: { name: "", phone: "" },
+  });
+
+  function onSubmit(values: BookingValues) {
+    const formattedDate = format(values.date, "PPP", { locale: ptBR });
+    const message =
+      `Olá! Gostaria de agendar uma consulta.\n` +
+      `Nome: ${values.name}\n` +
+      `Data sugerida: ${formattedDate}\n` +
+      `Telefone: ${values.phone}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    toast.success("Solicitação enviada!", {
+      description: "Entraremos em contato em breve.",
+    });
+    form.reset({ name: "", phone: "", date: undefined as unknown as Date });
+  }
+
+  return (
+    <section id="agendar" className="bg-secondary/50 py-16 md:py-24">
+      <div className="mx-auto max-w-xl px-4">
+        <div className="mb-10 text-center">
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+            Agende sua Consulta
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Preencha os dados abaixo e enviaremos sua solicitação direto pelo WhatsApp.
+          </p>
+        </div>
+        <Card className="rounded-2xl border-border/50 bg-card shadow-sm">
+          <CardContent className="p-6 md:p-8">
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nome completo</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Seu nome" maxLength={100} {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="date"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                      <FormLabel>Data sugerida</FormLabel>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              type="button"
+                              variant="outline"
+                              className={cn(
+                                "w-full justify-start text-left font-normal",
+                                !field.value && "text-muted-foreground",
+                              )}
+                            >
+                              <CalendarIcon className="mr-2 h-4 w-4" />
+                              {field.value
+                                ? format(field.value, "PPP", { locale: ptBR })
+                                : "Selecione uma data"}
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={field.value}
+                            onSelect={field.onChange}
+                            disabled={(date) => {
+                              const today = new Date();
+                              today.setHours(0, 0, 0, 0);
+                              return date < today;
+                            }}
+                            initialFocus
+                            locale={ptBR}
+                            className={cn("p-3 pointer-events-auto")}
+                          />
+                        </PopoverContent>
+                      </Popover>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Telefone</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="tel"
+                          placeholder="(11) 99999-9999"
+                          maxLength={20}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
+                  type="submit"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  Enviar pelo WhatsApp
+                </Button>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
 function Footer() {
   return (
     <footer className="border-t border-border/50 bg-card py-12">
@@ -315,6 +485,7 @@ function Index() {
       <About />
       <Specialties />
       <Approach />
+      <BookingForm />
       <Faq />
       <Footer />
       <WhatsAppFloat />
