@@ -49,6 +49,8 @@
   --color-sage-foreground: var(--sage-foreground);
   --color-sage-light: var(--sage-light);
   --color-warm: var(--warm);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
