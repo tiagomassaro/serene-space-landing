@@ -313,8 +313,8 @@ function Index() {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <Specialties />
       <About />
+      <Specialties />
       <Approach />
       <Faq />
       <Footer />
