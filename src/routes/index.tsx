@@ -71,7 +71,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <button onClick={() => scrollTo("#inicio")} className="font-display text-xl font-semibold text-foreground tracking-tight">
+        <button onClick={() => scrollTo("#inicio")} className="font-display font-semibold text-foreground tracking-tight text-2xl">
           Espaço Terapêutico Perdizes
         </button>
 
