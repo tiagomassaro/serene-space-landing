@@ -127,7 +127,7 @@ function Header() {
                   {item.label}
                 </button>
               ))}
-              <Button onClick={() => window.open(WHATSAPP_URL, "_blank")} className="mt-4 rounded-2xl bg-primary text-primary-foreground">
+              <Button onClick={() => { scrollTo("#agendar"); setOpen(false); }} className="mt-4 rounded-2xl bg-primary text-primary-foreground">
                 Agendar Consulta
               </Button>
             </nav>
