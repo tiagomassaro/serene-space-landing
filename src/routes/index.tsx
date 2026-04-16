@@ -188,7 +188,7 @@ function About() {
         <div className="flex-1 space-y-5 text-center md:text-left">
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
-            Sou Ana Paula, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Há mais de 8 anos acompanho pessoas em suas jornadas de autoconhecimento e transformação pessoal.
+            Sou Maria Colomba, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Há mais de 8 anos acompanho pessoas em suas jornadas de autoconhecimento e transformação pessoal.
           </p>
           <p className="leading-relaxed text-muted-foreground">
             Acredito que cada pessoa carrega em si a capacidade de mudança. Meu papel é oferecer um espaço acolhedor, ético e livre de julgamentos, onde você pode se sentir seguro para explorar suas emoções e construir uma vida mais plena.
