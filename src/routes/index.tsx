@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoEspaco from "@/assets/logo-espaco.png";
 import logoPequeno from "@/assets/logo-pequeno.png";
+import fotoSobreMim from "@/assets/foto-sobremim.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -179,10 +180,8 @@ function About() {
     <section id="sobre" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16">
         <div className="flex justify-center md:w-1/3">
-          <div className="aspect-square w-56 overflow-hidden rounded-3xl bg-secondary shadow-lg md:w-72">
-            <div className="flex h-full w-full items-center justify-center text-muted-foreground">
-              <span className="text-sm">Foto</span>
-            </div>
+          <div className="aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
+            <img src={fotoSobreMim} alt="Maria Colomba - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-65" />
           </div>
         </div>
         <div className="flex-1 space-y-5 text-center md:text-left">
