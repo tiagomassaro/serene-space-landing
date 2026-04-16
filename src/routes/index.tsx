@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoEspaco from "@/assets/logo-espaco.png";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -135,10 +136,8 @@ function Hero() {
           </div>
         </div>
         <div className="flex flex-1 justify-center">
-          <div className="aspect-[3/4] w-64 overflow-hidden rounded-3xl bg-secondary shadow-xl md:w-80">
-            <div className="flex h-full w-full items-center justify-center text-muted-foreground">
-              <span className="text-center text-sm">Foto Profissional</span>
-            </div>
+          <div className="aspect-[3/4] w-64 overflow-hidden rounded-3xl bg-secondary shadow-xl md:w-80 flex items-center justify-center p-6">
+            <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-auto object-contain" />
           </div>
         </div>
       </div>
