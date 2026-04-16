@@ -1,31 +1,60 @@
 
-# Landing Page para Psicóloga Clínica
+The user wants to reuse the existing "Agendar Consulta" button (in the header) to open the booking form, instead of adding a new nav item. Let me revise the plan.
 
-## Visão Geral
-Landing page moderna, responsiva e minimalista para uma psicóloga clínica, com paleta em Verde Sálvia, Bege e Cinza Quente, transmitindo calma e profissionalismo.
+Looking at the code, "Agendar Consulta" buttons exist in:
+- Header desktop nav
+- Header mobile nav (Sheet)
+- Hero section ("Agendar pelo WhatsApp")
 
-## Estrutura
+Currently they all open `WHATSAPP_URL` directly. The user wants these to open/scroll to the new booking form section instead.
 
-### 1. Design System
-- Atualizar `styles.css` com a paleta: Verde Sálvia (#B2AC88), Bege (#F5F5DC), Cinza Quente (#4A4A4A)
-- Importar Google Fonts: Playfair Display (títulos) + Inter (corpo)
-- Bordas arredondadas (`rounded-2xl`), sombras suaves
+## Plano: Seção de Agendamento com Formulário via WhatsApp
 
-### 2. Componentes
-- **Header** — Sticky, navegação com scroll suave (Início, Sobre Mim, Especialidades, Abordagem, FAQ) + botão CTA "Agendar Consulta". Menu hamburger no mobile.
-- **Hero Section** — Layout em duas colunas: título impactante + subtítulo acolhedor + botão WhatsApp à esquerda; placeholder de foto com bordas arredondadas à direita.
-- **Especialidades** — Grid de 4 cards com ícones Lucide (Ansiedade, Depressão, Relacionamentos, Autoconhecimento).
-- **Sobre Mim** — Foto + texto biográfico lado a lado, formação acadêmica.
-- **Abordagem** — Explicação didática sobre TCC com elementos visuais.
-- **FAQ** — Accordion (Shadcn) com perguntas como duração da sessão, convênios, etc.
-- **Rodapé** — CRP, redes sociais, links úteis.
-- **Botão flutuante WhatsApp** — Fixo no canto inferior direito.
+Vou adicionar uma nova seção "Agende sua Consulta" e reaproveitar os botões "Agendar Consulta" já existentes para levar o usuário até o formulário.
 
-### 3. Páginas
-Tudo na `index.tsx` como single-page com scroll sections (apropriado para landing page). Navegação por âncoras dentro da mesma página.
+### O que será implementado
 
-### 4. Responsividade
-- Mobile-first com Tailwind breakpoints
-- Hero empilha verticalmente no mobile
-- Grid de cards adapta de 1 a 2 a 4 colunas
-- Menu hamburger com Sheet (Shadcn) no mobile
+**1. Nova seção `BookingForm` em `src/routes/index.tsx`** (id `agendar`, posicionada antes do FAQ)
+- Mesma paleta e estilo visual (card arredondado, fundo `bg-secondary/50` ou `bg-background` alternado)
+- Título "Agende sua Consulta" + subtítulo acolhedor
+
+**2. Campos do formulário**
+- Nome completo (texto, obrigatório, máx 100)
+- Data sugerida (DatePicker shadcn — Popover + Calendar, datas passadas desabilitadas)
+- Telefone (texto, obrigatório, máx 20)
+- Botão "Enviar pelo WhatsApp" com ícone
+
+**3. Validação e segurança**
+- `react-hook-form` + `zod` (já no projeto via shadcn `form`)
+- Limites de tamanho em todos os campos
+- `encodeURIComponent` ao montar a URL
+- Sem logs de dados no console
+
+**4. Fluxo de envio**
+- Monta mensagem formatada e abre `https://wa.me/5511962250790?text=...` em nova aba
+- Toast de sucesso via `sonner`: "Solicitação enviada! Entraremos em contato em breve."
+- Reseta o formulário
+
+**5. Reaproveitar botões existentes (sem novo item de menu)**
+- Os 3 botões "Agendar Consulta" / "Agendar pelo WhatsApp" passam a fazer scroll para `#agendar` em vez de abrir o WhatsApp diretamente
+- O envio para o WhatsApp acontece apenas após o usuário preencher o formulário
+
+### Detalhes técnicos
+- Bibliotecas (já instaladas): `react-hook-form`, `@hookform/resolvers/zod`, `zod`, `date-fns`, shadcn `Form/Input/Calendar/Popover/Button`, `sonner`
+- Verificar `<Toaster />` do sonner em `src/routes/__root.tsx`; se ausente, adicionar
+- Calendar com `pointer-events-auto`
+- Layout: card centralizado `max-w-xl rounded-2xl`
+
+### Estrutura visual
+```text
+[Header: botão "Agendar Consulta"] ──► scroll para #agendar
+        ↓
+[Hero: botão "Agendar pelo WhatsApp"] ──► scroll para #agendar
+        ↓
+[Sobre] [Especialidades] [Abordagem]
+        ↓
+[#agendar — Formulário]
+  Nome / Data / Telefone → WhatsApp + toast
+        ↓
+[FAQ] [Footer]
+```
