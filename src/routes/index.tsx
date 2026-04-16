@@ -70,7 +70,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <button onClick={() => scrollTo("#inicio")} className="font-display text-xl font-semibold text-foreground tracking-tight">
-          Dra. Ana Paula
+          Dra. Maria Colomba
         </button>
 
         {/* Desktop nav */}
@@ -188,7 +188,7 @@ function About() {
         <div className="flex-1 space-y-5 text-center md:text-left">
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
-            Sou Ana Paula, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Há mais de 8 anos acompanho pessoas em suas jornadas de autoconhecimento e transformação pessoal.
+            Sou Maria Colomba, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Há mais de 8 anos acompanho pessoas em suas jornadas de autoconhecimento e transformação pessoal.
           </p>
           <p className="leading-relaxed text-muted-foreground">
             Acredito que cada pessoa carrega em si a capacidade de mudança. Meu papel é oferecer um espaço acolhedor, ético e livre de julgamentos, onde você pode se sentir seguro para explorar suas emoções e construir uma vida mais plena.
@@ -273,14 +273,14 @@ function Footer() {
     <footer className="border-t border-border/50 bg-card py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
-          <p className="font-display text-lg font-semibold text-foreground">Dra. Ana Paula</p>
+          <p className="font-display text-lg font-semibold text-foreground">Dra. Maria Colomba</p>
           <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 06/123456</p>
         </div>
         <div className="flex items-center gap-6">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Instagram">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="mailto:contato@draanapaula.com.br" className="text-muted-foreground transition-colors hover:text-primary" aria-label="E-mail">
+          <a href="mailto:contato@dramariacolomba.com.br" className="text-muted-foreground transition-colors hover:text-primary" aria-label="E-mail">
             <Mail className="h-5 w-5" />
           </a>
           <a href="tel:+5511999999999" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Telefone">
