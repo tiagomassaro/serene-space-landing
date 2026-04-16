@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoEspaco from "@/assets/logo-espaco.png";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
