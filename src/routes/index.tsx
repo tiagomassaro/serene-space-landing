@@ -121,11 +121,10 @@ function Hero() {
       <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16">
         <div className="flex-1 space-y-6 text-center md:text-left">
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Um espaço seguro para o seu{" "}
-            <span className="text-primary">autoconhecimento</span>
+            Acolhendo emoções, transformando o aprender.
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Cuide da sua saúde mental com acolhimento, ética e profissionalismo. Dê o primeiro passo rumo a uma vida mais leve e equilibrada.
+            Psicoterapia e Psicopedagogia clínica para crianças. No Espaço Terapêutico Perdizes, ajudamos os pequenos a construírem uma base sólida para uma vida mais leve e feliz.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
