@@ -188,12 +188,12 @@ function About() {
         <div className="flex-1 space-y-5 text-center md:text-left">
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
-            Sou Maria Colomba, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Há mais de 8 anos acompanho pessoas em suas jornadas de autoconhecimento e transformação pessoal.
+            Sou Maria Colomba, psicóloga clínica formada xxxxxxxxx
           </p>
           <p className="leading-relaxed text-muted-foreground">
-            Acredito que cada pessoa carrega em si a capacidade de mudança. Meu papel é oferecer um espaço acolhedor, ético e livre de julgamentos, onde você pode se sentir seguro para explorar suas emoções e construir uma vida mais plena.
+            Texto
           </p>
-          <p className="text-sm font-medium text-primary">CRP 06/123456</p>
+          <p className="text-sm font-medium text-primary">CRP 00/123456</p>
         </div>
       </div>
     </section>
@@ -274,7 +274,7 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
           <p className="font-display text-lg font-semibold text-foreground">Dra. Maria Colomba</p>
-          <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 06/123456</p>
+          <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 00/123456</p>
         </div>
         <div className="flex items-center gap-6">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Instagram">
