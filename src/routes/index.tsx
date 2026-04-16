@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoEspaco from "@/assets/logo-espaco.png";
+import logoPequeno from "@/assets/logo-pequeno.png";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -70,7 +71,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <button onClick={() => scrollTo("#inicio")} className="font-display text-xl font-semibold text-foreground tracking-tight">
+        <button onClick={() => scrollTo("#inicio")} className="flex items-center gap-2 font-display text-xl font-semibold text-foreground tracking-tight">
+          <img src={logoPequeno} alt="Logo" className="h-8 w-8 object-contain" />
           Espaço Terapêutico Perdizes
         </button>
 
