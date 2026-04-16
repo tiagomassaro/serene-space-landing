@@ -274,7 +274,7 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
           <p className="font-display text-lg font-semibold text-foreground">Dra. Maria Colomba</p>
-          <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 06/123456</p>
+          <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 00/123456</p>
         </div>
         <div className="flex items-center gap-6">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Instagram">
