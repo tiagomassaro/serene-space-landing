@@ -152,7 +152,7 @@ function Hero() {
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
-              onClick={() => window.open(WHATSAPP_URL, "_blank")}
+              onClick={() => scrollTo("#agendar")}
               className="flex items-center gap-2 rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
             >
               <MessageCircle className="h-5 w-5" />
