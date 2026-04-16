@@ -107,7 +107,7 @@ function Header() {
               {item.label}
             </button>
           ))}
-          <Button onClick={() => window.open(WHATSAPP_URL, "_blank")} className="rounded-2xl bg-primary px-6 text-primary-foreground hover:bg-primary/90">
+          <Button onClick={() => scrollTo("#agendar")} className="rounded-2xl bg-primary px-6 text-primary-foreground hover:bg-primary/90">
             Agendar Consulta
           </Button>
         </nav>
