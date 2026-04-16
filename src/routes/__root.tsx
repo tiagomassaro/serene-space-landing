@@ -29,11 +29,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Psicóloga Clínica | Espaço de Autoconhecimento e Bem-Estar" },
-      { name: "description", content: "Psicóloga clínica especializada em ansiedade, depressão, relacionamentos e autoconhecimento. Agende sua consulta online." },
-      { property: "og:title", content: "Psicóloga Clínica | Espaço de Autoconhecimento" },
-      { property: "og:description", content: "Um espaço seguro para o seu autoconhecimento e bem-estar emocional." },
+      { title: "Psicóloga Clínica | Espaço Terapêutico Perdizes" },
+      { name: "description", content: "Psicóloga clínica." },
+      { property: "og:title", content: "Psicóloga Clínica | Espaço Terapêutico Perdizes" },
+      { property: "og:description", content: "Psicóloga clínica." },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Psicóloga Clínica | Espaço Terapêutico Perdizes" },
+      { name: "twitter:description", content: "Psicóloga clínica." },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
