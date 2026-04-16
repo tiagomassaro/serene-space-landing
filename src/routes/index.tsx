@@ -137,7 +137,7 @@ function Hero() {
           </div>
         </div>
         <div className="flex flex-1 justify-center">
-          <div className="aspect-square w-64 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-80 flex items-center justify-center p-2">
+          <div className="aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2">
             <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
           </div>
         </div>
