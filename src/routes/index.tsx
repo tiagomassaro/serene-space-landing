@@ -48,9 +48,13 @@ import {
   Instagram,
   Mail,
   Phone,
-  ChevronDown,
   CheckCircle2,
   CalendarIcon,
+  GraduationCap,
+  BookOpen,
+  Activity,
+  Handshake,
+  Flower2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
@@ -66,16 +70,53 @@ const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre Mim", href: "#sobre" },
   { label: "Especialidades", href: "#especialidades" },
+  { label: "Áreas de Atuação", href: "#areas" },
   { label: "Abordagem", href: "#abordagem" },
   { label: "Ambientes", href: "#ambientes" },
   { label: "FAQ", href: "#faq" },
 ];
 
 const SPECIALTIES = [
-  { icon: Brain, title: "Ansiedade", description: "Técnicas e acolhimento para lidar com pensamentos ansiosos e recuperar sua tranquilidade." },
-  { icon: Heart, title: "Depressão", description: "Suporte empático e estratégias eficazes para reencontrar sentido e motivação." },
-  { icon: Users, title: "Relacionamentos", description: "Fortalecimento de vínculos afetivos e desenvolvimento de uma comunicação saudável." },
-  { icon: Sparkles, title: "Autoconhecimento", description: "Jornada de autodescoberta para uma vida mais autêntica e alinhada com seus valores." },
+  {
+    icon: Heart,
+    title: "Psicoterapia infantil e na adolescência",
+    description:
+      "Espaço de escuta cuidadosa para crianças e adolescentes elaborarem emoções, vínculos e desafios próprios de cada fase do desenvolvimento.",
+  },
+  {
+    icon: BookOpen,
+    title: "Psicopedagogia clínica e orientação de pais",
+    description:
+      "Avaliação e intervenção nas dificuldades de aprendizagem, com orientação aos pais para fortalecer a parceria entre família, escola e clínica.",
+  },
+  {
+    icon: Brain,
+    title: "Neuropsicologia",
+    description:
+      "Avaliação das funções cognitivas — atenção, memória, linguagem e funções executivas — para compreender o funcionamento e direcionar o cuidado.",
+  },
+  {
+    icon: Handshake,
+    title: "Parceria com escolas e equipes de saúde",
+    description:
+      "Trabalho em rede com professores, neuropediatras e demais profissionais, porque cuidar de uma criança é sempre uma construção coletiva.",
+  },
+];
+
+const FORMACOES = [
+  "Especialização em Psicoterapia da Criança e do Adolescente — Sedes Sapientae",
+  "Psicopedagogia — Faculdade Oswaldo Cruz",
+  "Pós-graduação em Neuropsicologia",
+  "Formação em ABA — Neurosaber",
+];
+
+const AREAS_ATUACAO = [
+  "TEA — Transtorno do Espectro Autista",
+  "TDAH — Transtorno do Déficit de Atenção e Hiperatividade",
+  "Enurese noturna",
+  "Tricotilomania",
+  "Transtornos alimentares",
+  "Crises comportamentais e emocionais",
 ];
 
 const FAQ_ITEMS = [
@@ -203,22 +244,71 @@ function Specialties() {
 function About() {
   return (
     <section id="sobre" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16">
-        <div className="flex justify-center md:w-1/3">
+      <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16 md:items-start">
+        <div className="flex justify-center md:w-1/3 md:sticky md:top-24">
           <div className="aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
-            <img src={fotoSobreMim} alt="Maria Colomba - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-65" />
+            <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
           </div>
         </div>
         <div className="flex-1 space-y-5 text-center md:text-left">
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
-            Sou Maria Colomba, psicóloga clínica formada xxxxxxxxx
+            Sou <strong className="text-foreground">Maria Colomba Raccuia Ferreira</strong>, psicóloga com 34 anos de atuação clínica dedicada ao universo da infância, adolescência e família.
           </p>
           <p className="leading-relaxed text-muted-foreground">
-            Texto
+            Minha formação é sólida e contínua:
           </p>
-          <p className="text-sm font-medium text-primary">CRP 00/123456</p>
+
+          <ul className="space-y-3 text-left">
+            {FORMACOES.map((f) => (
+              <li
+                key={f}
+                className="flex items-start gap-3 rounded-2xl border border-border/50 bg-card/60 p-4 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-sage-light">
+                  <GraduationCap className="h-4 w-4 text-primary" />
+                </span>
+                <span className="text-sm leading-relaxed text-foreground">{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="leading-relaxed text-muted-foreground">
+            Atendo crianças, adolescentes e adultos, realizo orientação de pais e trabalho em parceria com escolas e neuropediatras — porque acredito que cuidar de uma criança é sempre um trabalho em rede.
+          </p>
+          <p className="leading-relaxed text-muted-foreground">
+            No <strong className="text-foreground">Espaço Terapêutico Perdizes</strong>, cada criança é acolhida com escuta cuidadosa, respeito ao seu tempo e atenção à sua singularidade.
+          </p>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Áreas de Atuação ─── */
+function AreasAtuacao() {
+  return (
+    <section id="areas" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div className="mb-10 text-center">
+        <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+          Áreas de Atuação
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+          Atendo crianças e adolescentes com demandas diversas, com escuta psicanalítica e intervenção baseada em evidências.
+        </p>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {AREAS_ATUACAO.map((area) => (
+          <div
+            key={area}
+            className="flex items-start gap-3 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+          >
+            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gold-light">
+              <Activity className="h-4 w-4 text-accent" />
+            </span>
+            <span className="text-sm font-medium leading-relaxed text-foreground">{area}</span>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -226,40 +316,79 @@ function About() {
 
 /* ─── Abordagem ─── */
 function Approach() {
-  const points = [
-    "Identificação de padrões de pensamento disfuncionais",
-    "Reestruturação cognitiva com técnicas validadas",
-    "Desenvolvimento de habilidades de enfrentamento",
-    "Resultados comprovados por pesquisas científicas",
+  const movimentos = [
+    {
+      title: "Acolher",
+      description: "Escuta cuidadosa da criança, do adolescente e de sua família.",
+      icon: Heart,
+    },
+    {
+      title: "Intervir",
+      description: "Manejo do sintoma com técnicas baseadas em evidências.",
+      icon: Activity,
+    },
+    {
+      title: "Transformar",
+      description: "Compreensão da causa e promoção de mudanças duradouras.",
+      icon: Sparkles,
+    },
   ];
 
   return (
     <section id="abordagem" className="bg-secondary/50 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16">
-          <div className="flex-1 space-y-5">
-            <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Abordagem Terapêutica</h2>
+        <div className="mb-12 text-center">
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+            Abordagem Terapêutica
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Profundidade da escuta psicanalítica somada à eficácia das intervenções estruturadas.
+          </p>
+        </div>
+
+        <div className="grid gap-10 md:grid-cols-2 md:gap-12">
+          <div className="space-y-5">
             <p className="leading-relaxed text-muted-foreground">
-              Trabalho com a <strong className="text-foreground">Terapia Cognitivo-Comportamental (TCC)</strong>, uma abordagem baseada em evidências científicas que ajuda a compreender como pensamentos, emoções e comportamentos estão interligados.
+              Minha prática clínica integra a <strong className="text-foreground">escuta psicanalítica</strong> com intervenções estruturadas pelo método <strong className="text-foreground">ABA</strong> e pela <strong className="text-foreground">Terapia Comportamental</strong> — uma combinação que me permite atuar tanto na profundidade quanto na superfície do sintoma.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              A TCC é uma das abordagens mais eficazes para o tratamento de transtornos de ansiedade, depressão e diversas outras demandas emocionais, proporcionando resultados concretos e duradouros.
+              A psicanálise me oferece o olhar para o sujeito: sua história, seus vínculos, o que o sintoma quer dizer. O ABA e a Terapia Comportamental me oferecem as ferramentas para intervir de forma eficaz e mensurável no comportamento.
             </p>
-            <ul className="space-y-3 pt-2">
-              {points.map((p) => (
-                <li key={p} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-muted-foreground">{p}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="leading-relaxed text-muted-foreground">
+              Essa integração garante um cuidado completo: <strong className="text-foreground">humano, técnico e eficaz</strong>.
+            </p>
+            <blockquote className="rounded-2xl border-l-4 border-accent bg-card/60 p-5 italic text-foreground shadow-sm">
+              “Escuto a causa. Trato o sintoma. Transformo o comportamento.”
+            </blockquote>
           </div>
-          <div className="flex flex-1 justify-center">
-            <div className="aspect-square w-56 overflow-hidden rounded-3xl bg-card shadow-lg md:w-72">
-              <div className="flex h-full w-full items-center justify-center text-muted-foreground">
-                <Brain className="h-16 w-16 text-primary/30" />
+
+          <div className="space-y-4">
+            <p className="font-display text-lg font-semibold text-foreground">
+              Trabalho em três movimentos:
+            </p>
+            {movimentos.map((m, i) => (
+              <div
+                key={m.title}
+                className="flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sage-light">
+                  <m.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-display text-xs font-bold text-accent">
+                      0{i + 1}
+                    </span>
+                    <h3 className="font-display text-lg font-semibold text-foreground">
+                      {m.title}
+                    </h3>
+                  </div>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {m.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
