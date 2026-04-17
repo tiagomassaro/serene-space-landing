@@ -53,6 +53,7 @@ import {
   CalendarIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Environments } from "@/components/Environments";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -66,6 +67,7 @@ const NAV_ITEMS = [
   { label: "Sobre Mim", href: "#sobre" },
   { label: "Especialidades", href: "#especialidades" },
   { label: "Abordagem", href: "#abordagem" },
+  { label: "Ambientes", href: "#ambientes" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -485,6 +487,7 @@ function Index() {
       <About />
       <Specialties />
       <Approach />
+      <Environments />
       <BookingForm />
       <Faq />
       <Footer />
