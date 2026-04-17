@@ -615,6 +615,7 @@ function Index() {
       <Hero />
       <About />
       <Specialties />
+      <AreasAtuacao />
       <Approach />
       <Environments />
       <BookingForm />
