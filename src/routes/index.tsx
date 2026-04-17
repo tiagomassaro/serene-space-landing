@@ -119,7 +119,7 @@ const AREAS_ATUACAO = [
 const FAQ_ITEMS = [
   { question: "Quanto tempo dura cada sessão?", answer: "As sessões têm duração de 45 minutos. Com crianças pequenas, trabalho em blocos de 25 minutos — sempre seguidos de uma devolutiva para o responsável, que é parte essencial do processo" },
   { question: "Atende por convênio?", answer: "Não atendo por convênio. Emito nota fiscal para que você possa solicitar reembolso junto ao seu plano de saúde." },
-  { question: "Como funciona a primeira sessão?", answer: "A primeira sessão é um momento de acolhimento e escuta. Conversamos sobre suas demandas, expectativas e definimos juntos os objetivos do processo terapêutico." },
+  { question: "Como funciona a primeira sessão?", answer: "O processo começa com uma anamnese detalhada com os pais, onde colho informações sobre a gestação, parto, primeiros anos de vida e a queixa atual. Em seguida, realizo sessões de observação lúdica com a criança e, quando indicado, aplico testes de personalidade. Todo esse processo — que ocorre entre a 4ª e a 10ª sessão — culmina em uma devolutiva completa do psicodiagnóstico." },
   { question: "Atende online ou presencial?", answer: "Atendo nas duas modalidades. As sessões online são realizadas por videochamada em plataforma segura, com a mesma qualidade do atendimento presencial." },
   { question: "Com que frequência devo fazer terapia?", answer: "O mais indicado é uma sessão por semana, especialmente no início do processo. Com o tempo, podemos ajustar a frequência conforme sua evolução." },
 ];
