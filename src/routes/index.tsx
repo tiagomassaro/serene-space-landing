@@ -117,7 +117,7 @@ const AREAS_ATUACAO = [
 ];
 
 const FAQ_ITEMS = [
-  { question: "Quanto tempo dura cada sessão?", answer: "Cada sessão tem duração de 50 minutos, seguindo o padrão da prática clínica psicológica." },
+  { question: "Quanto tempo dura cada sessão?", answer: "As sessões têm duração de 45 minutos. Com crianças pequenas, trabalho em blocos de 25 minutos — sempre seguidos de uma devolutiva para o responsável, que é parte essencial do processo" },
   { question: "Atende por convênio?", answer: "Atualmente atendo de forma particular. Emito recibo para reembolso junto ao convênio, caso sua operadora ofereça essa opção." },
   { question: "Como funciona a primeira sessão?", answer: "A primeira sessão é um momento de acolhimento e escuta. Conversamos sobre suas demandas, expectativas e definimos juntos os objetivos do processo terapêutico." },
   { question: "Atende online ou presencial?", answer: "Atendo nas duas modalidades. As sessões online são realizadas por videochamada em plataforma segura, com a mesma qualidade do atendimento presencial." },
