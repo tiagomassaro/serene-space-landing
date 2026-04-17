@@ -41,20 +41,17 @@ import {
 import {
   Brain,
   Heart,
-  Users,
   Sparkles,
   Menu,
   MessageCircle,
   Instagram,
   Mail,
   Phone,
-  CheckCircle2,
   CalendarIcon,
   GraduationCap,
   BookOpen,
   Activity,
   Handshake,
-  Flower2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
