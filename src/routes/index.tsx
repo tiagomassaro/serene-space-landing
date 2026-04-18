@@ -142,14 +142,23 @@ function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-2 md:flex">
           {NAV_ITEMS.map((item) => (
-            <button key={item.href} onClick={() => scrollTo(item.href)} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-              {item.label}
+            <button
+              key={item.href}
+              onClick={() => scrollTo(item.href)}
+              className="group relative px-4 py-2 text-base font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary"
+            >
+              <span className="relative z-10">{item.label}</span>
+              <span className="pointer-events-none absolute bottom-1 left-1/2 h-px w-0 -translate-x-1/2 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-500 ease-out group-hover:w-[80%]" />
             </button>
           ))}
-          <Button onClick={() => scrollTo("#agendar")} className="rounded-2xl bg-primary px-6 text-primary-foreground hover:bg-primary/90">
-            Agendar Consulta
+          <Button
+            onClick={() => scrollTo("#agendar")}
+            className="group relative ml-4 overflow-hidden rounded-full bg-primary px-7 py-5 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_4px_20px_-4px_hsl(var(--primary)/0.35)] transition-all duration-500 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_10px_30px_-6px_hsl(var(--primary)/0.55)]"
+          >
+            <span className="relative z-10">Agendar Consulta</span>
+            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
           </Button>
         </nav>
 
