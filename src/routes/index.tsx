@@ -25,6 +25,7 @@ import {
 import logoEspaco from "@/assets/logo-espaco.png";
 import logoPequeno from "@/assets/logo-pequeno.png";
 import fotoSobreMim from "@/assets/foto-sobremim.jpeg";
+import headerLogo from "@/assets/header-logo.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -60,7 +61,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_NUMBER = "5511962250790";
+const WHATSAPP_NUMBER = "5511970891810";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.`;
 
 const NAV_ITEMS = [
@@ -136,8 +137,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <button onClick={() => scrollTo("#inicio")} className="font-display font-semibold text-foreground tracking-tight text-2xl">
-          Espaço Terapêutico Perdizes
+        <button onClick={() => scrollTo("#inicio")} className="flex items-center" aria-label="Espaço Terapêutico Perdizes">
+          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="h-14 w-auto md:h-16 mix-blend-multiply" />
         </button>
 
         {/* Desktop nav */}
@@ -570,16 +571,16 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
           <p className="font-display text-lg font-semibold text-foreground">Espaço Terapêutico Perdizes</p>
-          <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 00/123456</p>
+          <p className="mt-1 text-sm text-muted-foreground">Psicóloga Clínica — CRP 06/181440</p>
         </div>
         <div className="flex items-center gap-6">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Instagram">
+          <a href="https://www.instagram.com/espacoterapeuticoperdizes/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Instagram">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="mailto:contato@dramariacolomba.com.br" className="text-muted-foreground transition-colors hover:text-primary" aria-label="E-mail">
+          <a href="mailto:colombamaria@hotmail.com" className="text-muted-foreground transition-colors hover:text-primary" aria-label="E-mail">
             <Mail className="h-5 w-5" />
           </a>
-          <a href="tel:+5511999999999" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Telefone">
+          <a href="tel:+5511970891810" className="text-muted-foreground transition-colors hover:text-primary" aria-label="Telefone">
             <Phone className="h-5 w-5" />
           </a>
         </div>
