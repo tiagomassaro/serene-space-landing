@@ -25,7 +25,7 @@ import {
 import logoEspaco from "@/assets/logo-espaco.png";
 import logoPequeno from "@/assets/logo-pequeno.png";
 import fotoSobreMim from "@/assets/foto-sobremim.jpeg";
-import headerLogo from "@/assets/header-logo.jpeg";
+import headerLogo from "@/assets/header-logo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
@@ -138,7 +138,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <button onClick={() => scrollTo("#inicio")} className="flex items-center" aria-label="Espaço Terapêutico Perdizes">
-          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="h-14 w-auto md:h-16 mix-blend-multiply" />
+          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="h-20 w-auto md:h-24" />
         </button>
 
         {/* Desktop nav */}
