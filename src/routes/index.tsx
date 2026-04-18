@@ -136,9 +136,9 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1">
         <button onClick={() => scrollTo("#inicio")} className="flex items-center" aria-label="Espaço Terapêutico Perdizes">
-          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="h-20 w-auto md:h-24" />
+          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="block h-14 w-auto md:h-16" />
         </button>
 
         {/* Desktop nav */}
