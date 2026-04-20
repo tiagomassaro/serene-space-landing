@@ -315,27 +315,31 @@ function About() {
 /* ─── Áreas de Atuação ─── */
 function AreasAtuacao() {
   return (
-    <section id="areas" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="mb-10 text-center">
-        <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-          Áreas de Atuação
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Atendo crianças e adolescentes com demandas diversas, com escuta psicanalítica e intervenção baseada em evidências.
-        </p>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {AREAS_ATUACAO.map((area) => (
-          <div
-            key={area}
-            className="flex items-start gap-3 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-          >
-            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gold-light">
-              <Activity className="h-4 w-4 text-accent" />
-            </span>
-            <span className="text-sm font-medium leading-relaxed text-foreground">{area}</span>
-          </div>
-        ))}
+    <section id="areas" className="relative bg-sage-light py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mb-10 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Demandas atendidas</span>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+            Áreas de Atuação
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Atendo crianças e adolescentes com demandas diversas, com escuta psicanalítica e intervenção baseada em evidências.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {AREAS_ATUACAO.map((area) => (
+            <div
+              key={area}
+              className="group flex items-start gap-3 rounded-2xl border border-border/50 bg-card/90 p-5 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10"
+            >
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold-light to-sage-soft transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                <Activity className="h-4 w-4 text-accent" />
+              </span>
+              <span className="text-sm font-medium leading-relaxed text-foreground">{area}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
