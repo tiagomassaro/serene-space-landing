@@ -433,23 +433,27 @@ function Approach() {
 /* ─── FAQ ─── */
 function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-4 py-16 md:py-24">
-      <div className="mb-12 text-center">
-        <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Perguntas Frequentes</h2>
-        <p className="mt-4 text-muted-foreground">Tire suas dúvidas sobre o processo terapêutico</p>
+    <section id="faq" className="relative bg-sage-light py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+      <div className="mx-auto max-w-3xl px-4">
+        <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Dúvidas</span>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Perguntas Frequentes</h2>
+          <p className="mt-4 text-muted-foreground">Tire suas dúvidas sobre o processo terapêutico</p>
+        </div>
+        <Accordion type="single" collapsible className="space-y-3">
+          {FAQ_ITEMS.map((item, i) => (
+            <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border/50 bg-card px-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md data-[state=open]:border-primary/40 data-[state=open]:shadow-md">
+              <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="leading-relaxed text-muted-foreground">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
-      <Accordion type="single" collapsible className="space-y-3">
-        {FAQ_ITEMS.map((item, i) => (
-          <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border/50 bg-card px-6 shadow-sm">
-            <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline">
-              {item.question}
-            </AccordionTrigger>
-            <AccordionContent className="leading-relaxed text-muted-foreground">
-              {item.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
     </section>
   );
 }
