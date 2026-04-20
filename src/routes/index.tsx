@@ -191,11 +191,19 @@ function Header() {
 /* ─── Hero ─── */
 function Hero() {
   return (
-    <section id="inicio" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16">
+    <section id="inicio" className="relative overflow-hidden">
+      {/* Decorative sage accents */}
+      <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sage-soft blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-gold-light blur-3xl" aria-hidden />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 md:flex-row md:gap-16 md:py-24">
         <div className="flex-1 space-y-6 text-center md:text-left">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-sage-light px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            Psicologia Clínica em Perdizes
+          </span>
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Acolhendo emoções, transformando o aprender.
+            Acolhendo emoções, <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">transformando</span> o aprender.
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
             Psicoterapia e Psicopedagogia clínica para crianças. No Espaço Terapêutico Perdizes, ajudamos os pequenos a construírem uma base sólida para uma vida mais leve e feliz.
@@ -203,16 +211,20 @@ function Hero() {
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
               onClick={() => scrollTo("#agendar")}
-              className="flex items-center gap-2 rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
+              className="group relative flex items-center gap-2 overflow-hidden rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40"
             >
-              <MessageCircle className="h-5 w-5" />
-              Agendar pelo WhatsApp
+              <MessageCircle className="relative z-10 h-5 w-5" />
+              <span className="relative z-10">Agendar pelo WhatsApp</span>
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
             </Button>
           </div>
         </div>
         <div className="flex flex-1 justify-center mx-0 ml-0">
-          <div className="aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
-            <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sage-medium via-sage-soft to-gold-light blur-xl opacity-70" aria-hidden />
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
+              <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
+            </div>
           </div>
         </div>
       </div>
@@ -223,17 +235,20 @@ function Hero() {
 /* ─── Especialidades ─── */
 function Specialties() {
   return (
-    <section id="especialidades" className="bg-secondary/50 py-16 md:py-24">
+    <section id="especialidades" className="relative bg-sage-light py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">O que ofereço</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Especialidades</h2>
           <p className="mt-4 text-muted-foreground">Áreas em que posso te ajudar a encontrar equilíbrio e bem-estar</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SPECIALTIES.map((s) => (
-            <Card key={s.title} className="rounded-2xl border-border/50 bg-card shadow-sm transition-shadow hover:shadow-md">
+            <Card key={s.title} className="group relative overflow-hidden rounded-2xl border-border/50 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
+              <span className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
               <CardContent className="flex flex-col items-center p-8 text-center">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sage-light">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
                   <s.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground">{s.title}</h3>
@@ -250,14 +265,19 @@ function Specialties() {
 /* ─── Sobre Mim ─── */
 function About() {
   return (
-    <section id="sobre" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16 md:items-start">
+    <section id="sobre" className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
+      <div className="relative flex flex-col items-center gap-12 md:flex-row md:gap-16 md:items-start">
         <div className="flex justify-center md:w-1/3 md:sticky md:top-24">
-          <div className="aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
-            <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
+          <div className="relative">
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
+              <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
+            </div>
           </div>
         </div>
         <div className="flex-1 space-y-5 text-center md:text-left">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Quem sou</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
             Sou <strong className="text-foreground">Maria Colomba Raccuia Ferreira</strong>, psicóloga com 34 anos de atuação clínica dedicada ao universo da infância, adolescência e família.
@@ -295,27 +315,31 @@ function About() {
 /* ─── Áreas de Atuação ─── */
 function AreasAtuacao() {
   return (
-    <section id="areas" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="mb-10 text-center">
-        <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-          Áreas de Atuação
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Atendo crianças e adolescentes com demandas diversas, com escuta psicanalítica e intervenção baseada em evidências.
-        </p>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {AREAS_ATUACAO.map((area) => (
-          <div
-            key={area}
-            className="flex items-start gap-3 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-          >
-            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gold-light">
-              <Activity className="h-4 w-4 text-accent" />
-            </span>
-            <span className="text-sm font-medium leading-relaxed text-foreground">{area}</span>
-          </div>
-        ))}
+    <section id="areas" className="relative bg-sage-light py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mb-10 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Demandas atendidas</span>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+            Áreas de Atuação
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Atendo crianças e adolescentes com demandas diversas, com escuta psicanalítica e intervenção baseada em evidências.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {AREAS_ATUACAO.map((area) => (
+            <div
+              key={area}
+              className="group flex items-start gap-3 rounded-2xl border border-border/50 bg-card/90 p-5 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10"
+            >
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold-light to-sage-soft transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                <Activity className="h-4 w-4 text-accent" />
+              </span>
+              <span className="text-sm font-medium leading-relaxed text-foreground">{area}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -342,9 +366,11 @@ function Approach() {
   ];
 
   return (
-    <section id="abordagem" className="bg-secondary/50 py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-4">
+    <section id="abordagem" className="relative py-16 md:py-24">
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-sage-soft blur-3xl opacity-50" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Método</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Abordagem Terapêutica
           </h2>
@@ -364,7 +390,8 @@ function Approach() {
             <p className="leading-relaxed text-muted-foreground">
               Essa integração garante um cuidado completo: <strong className="text-foreground">humano, técnico e eficaz</strong>.
             </p>
-            <blockquote className="rounded-2xl border-l-4 border-accent bg-card/60 p-5 italic text-foreground shadow-sm">
+            <blockquote className="relative overflow-hidden rounded-2xl border-l-4 border-accent bg-gradient-to-br from-sage-light to-card/60 p-6 font-display text-lg italic text-foreground shadow-md">
+              <span className="absolute -top-2 -left-1 select-none font-display text-6xl text-accent/20" aria-hidden>“</span>
               “Escuto a causa. Trato o sintoma. Transformo o comportamento.”
             </blockquote>
           </div>
@@ -376,9 +403,9 @@ function Approach() {
             {movimentos.map((m, i) => (
               <div
                 key={m.title}
-                className="flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                className="group flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sage-light">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
                   <m.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -406,23 +433,27 @@ function Approach() {
 /* ─── FAQ ─── */
 function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-4 py-16 md:py-24">
-      <div className="mb-12 text-center">
-        <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Perguntas Frequentes</h2>
-        <p className="mt-4 text-muted-foreground">Tire suas dúvidas sobre o processo terapêutico</p>
+    <section id="faq" className="relative bg-sage-light py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+      <div className="mx-auto max-w-3xl px-4">
+        <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Dúvidas</span>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Perguntas Frequentes</h2>
+          <p className="mt-4 text-muted-foreground">Tire suas dúvidas sobre o processo terapêutico</p>
+        </div>
+        <Accordion type="single" collapsible className="space-y-3">
+          {FAQ_ITEMS.map((item, i) => (
+            <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border/50 bg-card px-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md data-[state=open]:border-primary/40 data-[state=open]:shadow-md">
+              <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="leading-relaxed text-muted-foreground">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
-      <Accordion type="single" collapsible className="space-y-3">
-        {FAQ_ITEMS.map((item, i) => (
-          <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border/50 bg-card px-6 shadow-sm">
-            <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline">
-              {item.question}
-            </AccordionTrigger>
-            <AccordionContent className="leading-relaxed text-muted-foreground">
-              {item.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
     </section>
   );
 }
@@ -467,9 +498,12 @@ function BookingForm() {
   }
 
   return (
-    <section id="agendar" className="bg-secondary/50 py-16 md:py-24">
-      <div className="mx-auto max-w-xl px-4">
+    <section id="agendar" className="relative overflow-hidden py-16 md:py-24">
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gold-light blur-3xl opacity-50" aria-hidden />
+      <div className="relative mx-auto max-w-xl px-4">
         <div className="mb-10 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Vamos conversar</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Agende sua Consulta
           </h2>
@@ -477,7 +511,7 @@ function BookingForm() {
             Preencha os dados abaixo e enviaremos sua solicitação direto pelo WhatsApp.
           </p>
         </div>
-        <Card className="rounded-2xl border-border/50 bg-card shadow-sm">
+        <Card className="rounded-2xl border-border/50 bg-card/95 shadow-xl shadow-primary/5 backdrop-blur-sm">
           <CardContent className="p-6 md:p-8">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
