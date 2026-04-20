@@ -366,9 +366,11 @@ function Approach() {
   ];
 
   return (
-    <section id="abordagem" className="bg-secondary/50 py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-4">
+    <section id="abordagem" className="relative py-16 md:py-24">
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-sage-soft blur-3xl opacity-50" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Método</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Abordagem Terapêutica
           </h2>
@@ -388,7 +390,8 @@ function Approach() {
             <p className="leading-relaxed text-muted-foreground">
               Essa integração garante um cuidado completo: <strong className="text-foreground">humano, técnico e eficaz</strong>.
             </p>
-            <blockquote className="rounded-2xl border-l-4 border-accent bg-card/60 p-5 italic text-foreground shadow-sm">
+            <blockquote className="relative overflow-hidden rounded-2xl border-l-4 border-accent bg-gradient-to-br from-sage-light to-card/60 p-6 font-display text-lg italic text-foreground shadow-md">
+              <span className="absolute -top-2 -left-1 select-none font-display text-6xl text-accent/20" aria-hidden>“</span>
               “Escuto a causa. Trato o sintoma. Transformo o comportamento.”
             </blockquote>
           </div>
