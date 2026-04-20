@@ -498,9 +498,12 @@ function BookingForm() {
   }
 
   return (
-    <section id="agendar" className="bg-secondary/50 py-16 md:py-24">
-      <div className="mx-auto max-w-xl px-4">
+    <section id="agendar" className="relative overflow-hidden py-16 md:py-24">
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gold-light blur-3xl opacity-50" aria-hidden />
+      <div className="relative mx-auto max-w-xl px-4">
         <div className="mb-10 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Vamos conversar</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Agende sua Consulta
           </h2>
@@ -508,7 +511,7 @@ function BookingForm() {
             Preencha os dados abaixo e enviaremos sua solicitação direto pelo WhatsApp.
           </p>
         </div>
-        <Card className="rounded-2xl border-border/50 bg-card shadow-sm">
+        <Card className="rounded-2xl border-border/50 bg-card/95 shadow-xl shadow-primary/5 backdrop-blur-sm">
           <CardContent className="p-6 md:p-8">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
