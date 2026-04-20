@@ -403,9 +403,9 @@ function Approach() {
             {movimentos.map((m, i) => (
               <div
                 key={m.title}
-                className="flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                className="group flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sage-light">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
                   <m.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
