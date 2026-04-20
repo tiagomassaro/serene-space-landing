@@ -235,17 +235,20 @@ function Hero() {
 /* ─── Especialidades ─── */
 function Specialties() {
   return (
-    <section id="especialidades" className="bg-secondary/50 py-16 md:py-24">
+    <section id="especialidades" className="relative bg-sage-light py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">O que ofereço</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Especialidades</h2>
           <p className="mt-4 text-muted-foreground">Áreas em que posso te ajudar a encontrar equilíbrio e bem-estar</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SPECIALTIES.map((s) => (
-            <Card key={s.title} className="rounded-2xl border-border/50 bg-card shadow-sm transition-shadow hover:shadow-md">
+            <Card key={s.title} className="group relative overflow-hidden rounded-2xl border-border/50 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
+              <span className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
               <CardContent className="flex flex-col items-center p-8 text-center">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sage-light">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
                   <s.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground">{s.title}</h3>
