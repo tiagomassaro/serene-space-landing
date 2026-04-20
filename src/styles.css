@@ -48,6 +48,8 @@
   --color-sage: var(--sage);
   --color-sage-foreground: var(--sage-foreground);
   --color-sage-light: var(--sage-light);
+  --color-sage-soft: var(--sage-soft);
+  --color-sage-medium: var(--sage-medium);
   --color-warm: var(--warm);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
@@ -61,6 +63,8 @@
   --sage: oklch(0.73 0.04 160);
   --sage-foreground: oklch(1 0 0);
   --sage-light: oklch(0.73 0.04 160 / 15%);
+  --sage-soft: oklch(0.73 0.04 160 / 25%);
+  --sage-medium: oklch(0.73 0.04 160 / 40%);
   /* Gold accent from logo arcs #B8A44C */
   --gold: oklch(0.71 0.12 90);
   --gold-light: oklch(0.71 0.12 90 / 15%);
