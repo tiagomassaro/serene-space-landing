@@ -191,11 +191,19 @@ function Header() {
 /* ─── Hero ─── */
 function Hero() {
   return (
-    <section id="inicio" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="flex flex-col items-center gap-12 md:flex-row md:gap-16">
+    <section id="inicio" className="relative overflow-hidden">
+      {/* Decorative sage accents */}
+      <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sage-soft blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-gold-light blur-3xl" aria-hidden />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 md:flex-row md:gap-16 md:py-24">
         <div className="flex-1 space-y-6 text-center md:text-left">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-sage-light px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            Psicologia Clínica em Perdizes
+          </span>
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Acolhendo emoções, transformando o aprender.
+            Acolhendo emoções, <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">transformando</span> o aprender.
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
             Psicoterapia e Psicopedagogia clínica para crianças. No Espaço Terapêutico Perdizes, ajudamos os pequenos a construírem uma base sólida para uma vida mais leve e feliz.
@@ -203,16 +211,20 @@ function Hero() {
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
               onClick={() => scrollTo("#agendar")}
-              className="flex items-center gap-2 rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
+              className="group relative flex items-center gap-2 overflow-hidden rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40"
             >
-              <MessageCircle className="h-5 w-5" />
-              Agendar pelo WhatsApp
+              <MessageCircle className="relative z-10 h-5 w-5" />
+              <span className="relative z-10">Agendar pelo WhatsApp</span>
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
             </Button>
           </div>
         </div>
         <div className="flex flex-1 justify-center mx-0 ml-0">
-          <div className="aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
-            <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sage-medium via-sage-soft to-gold-light blur-xl opacity-70" aria-hidden />
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
+              <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
+            </div>
           </div>
         </div>
       </div>
