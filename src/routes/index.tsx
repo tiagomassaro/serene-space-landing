@@ -653,14 +653,16 @@ function Index() {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
-      <About />
-      <Specialties />
-      <AreasAtuacao />
-      <Approach />
-      <Environments />
-      <BookingForm />
-      <Faq />
+      <main>
+        <Hero />
+        <About />
+        <Specialties />
+        <AreasAtuacao />
+        <Approach />
+        <Environments />
+        <BookingForm />
+        <Faq />
+      </main>
       <Footer />
       <WhatsAppFloat />
     </div>
