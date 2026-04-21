@@ -19,6 +19,26 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
       return;
     }
 
+    // Fallback: se IntersectionObserver não estiver disponível, mostra imediatamente.
+    if (typeof IntersectionObserver === "undefined") {
+      node.classList.add("is-visible");
+      return;
+    }
+
+    // Se o elemento já está dentro do viewport ao montar (conteúdo above-the-fold),
+    // revela imediatamente — evita conteúdo invisível dentro do iframe do preview.
+    const rect = node.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh && rect.bottom > 0) {
+      node.classList.add("is-visible");
+      return;
+    }
+
+    // Safety net: garante visibilidade mesmo se o observer não disparar.
+    const safety = window.setTimeout(() => {
+      node.classList.add("is-visible");
+    }, 1500);
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -29,7 +49,10 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
     }, options);
 
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(safety);
+      observer.disconnect();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
