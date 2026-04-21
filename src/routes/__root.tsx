@@ -36,6 +36,7 @@ export const Route = createRootRoute({
       { name: "author", content: "Maria Colomba Raccuia Ferreira" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "googlebot", content: "index, follow" },
+      { name: "google-site-verification", content: "QUd_E_sxrEB4OuVzlaPDgWQDJSvkl_yU47mdflgt31c" },
       { name: "language", content: "Portuguese" },
       { name: "geo.region", content: "BR-SP" },
       { name: "geo.placename", content: "Perdizes, São Paulo" },
