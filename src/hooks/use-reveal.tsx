@@ -37,23 +37,22 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
 }
 
 /**
- * Wrapper conveniente: renderiza um elemento com fade-in on scroll.
+ * Wrapper conveniente: renderiza uma <div> com fade-in on scroll.
  */
 type RevealProps = React.HTMLAttributes<HTMLDivElement> & {
-  as?: "div" | "section" | "article" | "li";
   delay?: number; // ms
 };
 
-export function Reveal({ as: Tag = "div", delay = 0, className = "", style, children, ...rest }: RevealProps) {
+export function Reveal({ delay = 0, className = "", style, children, ...rest }: RevealProps) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <Tag
-      ref={ref as React.RefObject<HTMLDivElement>}
+    <div
+      ref={ref}
       className={`reveal ${className}`.trim()}
       style={{ transitionDelay: `${delay}ms`, ...style }}
       {...rest}
     >
       {children}
-    </Tag>
+    </div>
   );
 }
