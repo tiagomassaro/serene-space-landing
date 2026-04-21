@@ -56,6 +56,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
+import { Reveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -155,7 +156,7 @@ function Header() {
           ))}
           <Button
             onClick={() => scrollTo("#agendar")}
-            className="group relative ml-4 overflow-hidden rounded-full bg-primary px-7 py-5 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_4px_20px_-4px_hsl(var(--primary)/0.35)] transition-all duration-500 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_10px_30px_-6px_hsl(var(--primary)/0.55)]"
+            className="group relative ml-4 overflow-hidden rounded-full bg-primary px-7 py-5 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_4px_20px_-4px_hsl(var(--primary)/0.35)] transition-all duration-500 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_10px_30px_-6px_hsl(var(--primary)/0.55)] tap-press-cta"
           >
             <span className="relative z-10">Agendar Consulta</span>
             <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
@@ -178,6 +179,7 @@ function Header() {
                 </button>
               ))}
               <Button onClick={() => { scrollTo("#agendar"); setOpen(false); }} className="mt-4 rounded-2xl bg-primary text-primary-foreground">
+              {/* keep simple */}
                 Agendar Consulta
               </Button>
             </nav>
