@@ -198,7 +198,7 @@ function Hero() {
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-gold-light blur-3xl" aria-hidden />
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 md:flex-row md:gap-16 md:py-24">
-        <div className="flex-1 space-y-6 text-center md:text-left">
+        <Reveal className="flex-1 space-y-6 text-center md:text-left">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-sage-light px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <Sparkles className="h-3.5 w-3.5" />
             Psicologia Clínica em Perdizes
@@ -212,22 +212,22 @@ function Hero() {
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
               onClick={() => scrollTo("#agendar")}
-              className="group relative flex items-center gap-2 overflow-hidden rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40"
+              className="group relative flex items-center gap-2 overflow-hidden rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 tap-press-cta"
             >
               <MessageCircle className="relative z-10 h-5 w-5" />
               <span className="relative z-10">Agendar pelo WhatsApp</span>
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
             </Button>
           </div>
-        </div>
-        <div className="flex flex-1 justify-center mx-0 ml-0">
+        </Reveal>
+        <Reveal delay={120} className="flex flex-1 justify-center mx-0 ml-0">
           <div className="relative">
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sage-medium via-sage-soft to-gold-light blur-xl opacity-70" aria-hidden />
-            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
               <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -239,14 +239,15 @@ function Specialties() {
     <section id="especialidades" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mb-12 text-center">
+        <Reveal className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">O que ofereço</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Especialidades</h2>
           <p className="mt-4 text-muted-foreground">Áreas em que posso te ajudar a encontrar equilíbrio e bem-estar</p>
-        </div>
+        </Reveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SPECIALTIES.map((s) => (
-            <Card key={s.title} className="group relative overflow-hidden rounded-2xl border-border/50 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
+          {SPECIALTIES.map((s, i) => (
+            <Reveal key={s.title} delay={i * 80}>
+            <Card className="group relative overflow-hidden rounded-2xl border-border/50 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 tap-press">
               <span className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
               <CardContent className="flex flex-col items-center p-8 text-center">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
@@ -256,6 +257,7 @@ function Specialties() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
               </CardContent>
             </Card>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -269,15 +271,15 @@ function About() {
     <section id="sobre" className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
       <div className="relative flex flex-col items-center gap-12 md:flex-row md:gap-16 md:items-start">
-        <div className="flex justify-center md:w-1/3 md:sticky md:top-24">
+        <Reveal className="flex justify-center md:w-1/3 md:sticky md:top-24">
           <div className="relative">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
-            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
               <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
             </div>
           </div>
-        </div>
-        <div className="flex-1 space-y-5 text-center md:text-left">
+        </Reveal>
+        <Reveal delay={120} className="flex-1 space-y-5 text-center md:text-left">
           <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Quem sou</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
@@ -291,7 +293,7 @@ function About() {
             {FORMACOES.map((f) => (
               <li
                 key={f}
-                className="flex items-start gap-3 rounded-2xl border border-border/50 bg-card/60 p-4 shadow-sm transition-shadow hover:shadow-md"
+                className="flex items-start gap-3 rounded-2xl border border-border/50 bg-card/60 p-4 shadow-sm transition-shadow hover:shadow-md tap-press"
               >
                 <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-sage-light">
                   <GraduationCap className="h-4 w-4 text-primary" />
@@ -307,7 +309,7 @@ function About() {
           <p className="leading-relaxed text-muted-foreground">
             No <strong className="text-foreground">Espaço Terapêutico Perdizes</strong>, cada criança é acolhida com escuta cuidadosa, respeito ao seu tempo e atenção à sua singularidade.
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -319,7 +321,7 @@ function AreasAtuacao() {
     <section id="areas" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mb-10 text-center">
+        <Reveal className="mb-10 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Demandas atendidas</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Áreas de Atuação
@@ -327,18 +329,17 @@ function AreasAtuacao() {
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Atendo crianças e adolescentes com demandas diversas, com escuta psicanalítica e intervenção baseada em evidências.
           </p>
-        </div>
+        </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {AREAS_ATUACAO.map((area) => (
-            <div
-              key={area}
-              className="group flex items-start gap-3 rounded-2xl border border-border/50 bg-card/90 p-5 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10"
-            >
+          {AREAS_ATUACAO.map((area, i) => (
+            <Reveal key={area} delay={i * 70}>
+            <div className="group flex items-start gap-3 rounded-2xl border border-border/50 bg-card/90 p-5 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 tap-press">
               <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold-light to-sage-soft transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                 <Activity className="h-4 w-4 text-accent" />
               </span>
               <span className="text-sm font-medium leading-relaxed text-foreground">{area}</span>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
