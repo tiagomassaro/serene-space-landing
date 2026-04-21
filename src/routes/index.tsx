@@ -139,7 +139,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1">
         <button onClick={() => scrollTo("#inicio")} className="flex items-center" aria-label="Espaço Terapêutico Perdizes">
-          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="block h-[68px] w-auto md:h-20" />
+          <img src={headerLogo} alt="Espaço Terapêutico Perdizes" className="block h-[68px] w-auto md:h-20 tap-press-soft" />
         </button>
 
         {/* Desktop nav */}
@@ -178,8 +178,7 @@ function Header() {
                   {item.label}
                 </button>
               ))}
-              <Button onClick={() => { scrollTo("#agendar"); setOpen(false); }} className="mt-4 rounded-2xl bg-primary text-primary-foreground">
-              {/* keep simple */}
+              <Button onClick={() => { scrollTo("#agendar"); setOpen(false); }} className="mt-4 rounded-2xl bg-primary text-primary-foreground tap-press-cta">
                 Agendar Consulta
               </Button>
             </nav>
