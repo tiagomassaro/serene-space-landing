@@ -371,7 +371,7 @@ function Approach() {
     <section id="abordagem" className="relative py-16 md:py-24">
       <div className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-sage-soft blur-3xl opacity-50" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-4">
-        <div className="mb-12 text-center">
+        <Reveal className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Método</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Abordagem Terapêutica
@@ -379,10 +379,10 @@ function Approach() {
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Profundidade da escuta psicanalítica somada à eficácia das intervenções estruturadas.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-10 md:grid-cols-2 md:gap-12">
-          <div className="space-y-5">
+          <Reveal className="space-y-5">
             <p className="leading-relaxed text-muted-foreground">
               Minha prática clínica integra a <strong className="text-foreground">escuta psicanalítica</strong> com intervenções estruturadas pelo método <strong className="text-foreground">ABA</strong> e pela <strong className="text-foreground">Terapia Comportamental</strong> — uma combinação que me permite atuar tanto na profundidade quanto na superfície do sintoma.
             </p>
@@ -392,20 +392,20 @@ function Approach() {
             <p className="leading-relaxed text-muted-foreground">
               Essa integração garante um cuidado completo: <strong className="text-foreground">humano, técnico e eficaz</strong>.
             </p>
-            <blockquote className="relative overflow-hidden rounded-2xl border-l-4 border-accent bg-gradient-to-br from-sage-light to-card/60 p-6 font-display text-lg italic text-foreground shadow-md">
+            <blockquote className="relative overflow-hidden rounded-2xl border-l-4 border-accent bg-gradient-to-br from-sage-light to-card/60 p-6 font-display text-lg italic text-foreground shadow-md tap-press">
               <span className="absolute -top-2 -left-1 select-none font-display text-6xl text-accent/20" aria-hidden>“</span>
               “Escuto a causa. Trato o sintoma. Transformo o comportamento.”
             </blockquote>
-          </div>
+          </Reveal>
 
-          <div className="space-y-4">
+          <Reveal delay={120} className="space-y-4">
             <p className="font-display text-lg font-semibold text-foreground">
               Trabalho em três movimentos:
             </p>
             {movimentos.map((m, i) => (
               <div
                 key={m.title}
-                className="group flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
+                className="group flex items-start gap-4 rounded-2xl border border-border/50 bg-card p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 tap-press"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
                   <m.icon className="h-6 w-6 text-primary" />
@@ -425,7 +425,7 @@ function Approach() {
                 </div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -438,14 +438,14 @@ function Faq() {
     <section id="faq" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-3xl px-4">
-        <div className="mb-12 text-center">
+        <Reveal className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Dúvidas</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Perguntas Frequentes</h2>
           <p className="mt-4 text-muted-foreground">Tire suas dúvidas sobre o processo terapêutico</p>
-        </div>
+        </Reveal>
         <Accordion type="single" collapsible className="space-y-3">
           {FAQ_ITEMS.map((item, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border/50 bg-card px-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md data-[state=open]:border-primary/40 data-[state=open]:shadow-md">
+            <AccordionItem key={i} value={`item-${i}`} className="rounded-2xl border border-border/50 bg-card px-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md data-[state=open]:border-primary/40 data-[state=open]:shadow-md tap-press">
               <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline">
                 {item.question}
               </AccordionTrigger>
@@ -504,7 +504,7 @@ function BookingForm() {
       <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
       <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gold-light blur-3xl opacity-50" aria-hidden />
       <div className="relative mx-auto max-w-xl px-4">
-        <div className="mb-10 text-center">
+        <Reveal className="mb-10 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Vamos conversar</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
             Agende sua Consulta
@@ -512,7 +512,8 @@ function BookingForm() {
           <p className="mt-4 text-muted-foreground">
             Preencha os dados abaixo e enviaremos sua solicitação direto pelo WhatsApp.
           </p>
-        </div>
+        </Reveal>
+        <Reveal delay={100}>
         <Card className="rounded-2xl border-border/50 bg-card/95 shadow-xl shadow-primary/5 backdrop-blur-sm">
           <CardContent className="p-6 md:p-8">
             <Form {...form}>
@@ -597,7 +598,7 @@ function BookingForm() {
 
                 <Button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 tap-press-cta"
                 >
                   <MessageCircle className="h-5 w-5" />
                   Enviar pelo WhatsApp
@@ -606,6 +607,7 @@ function BookingForm() {
             </Form>
           </CardContent>
         </Card>
+        </Reveal>
       </div>
     </section>
   );
