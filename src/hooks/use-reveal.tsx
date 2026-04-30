@@ -13,31 +13,22 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
     const node = ref.current;
     if (!node) return;
 
+    // Mostra imediatamente — garante que nada fique invisível no preview/iframe.
+    // A animação de entrada acontece via CSS na primeira pintura.
+    requestAnimationFrame(() => {
+      node.classList.add("is-visible");
+    });
+
     // Respeita preferência de redução de movimento
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       node.classList.add("is-visible");
       return;
     }
 
-    // Fallback: se IntersectionObserver não estiver disponível, mostra imediatamente.
     if (typeof IntersectionObserver === "undefined") {
       node.classList.add("is-visible");
       return;
     }
-
-    // Se o elemento já está dentro do viewport ao montar (conteúdo above-the-fold),
-    // revela imediatamente — evita conteúdo invisível dentro do iframe do preview.
-    const rect = node.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < vh && rect.bottom > 0) {
-      node.classList.add("is-visible");
-      return;
-    }
-
-    // Safety net: garante visibilidade mesmo se o observer não disparar.
-    const safety = window.setTimeout(() => {
-      node.classList.add("is-visible");
-    }, 1500);
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -50,7 +41,6 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
 
     observer.observe(node);
     return () => {
-      window.clearTimeout(safety);
       observer.disconnect();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
