@@ -56,6 +56,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
+import { Testimonials } from "@/components/Testimonials";
 import { Reveal } from "@/hooks/use-reveal";
 
 const SEO_DESCRIPTION = "Psicóloga especialista, há 34 anos atendendo crianças e adolescentes, com foco no comportamento e orientação de pais.";
@@ -678,6 +679,7 @@ function Index() {
         <AreasAtuacao />
         <Approach />
         <Environments />
+        <Testimonials />
         <BookingForm />
         <Faq />
       </main>
