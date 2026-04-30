@@ -90,9 +90,9 @@ const SPECIALTIES = [
   },
   {
     icon: Brain,
-    title: "Neuropsicologia",
+    title: "Neuropsicopedagogia",
     description:
-      "Avaliação das funções cognitivas — atenção, memória, linguagem e funções executivas — para compreender o funcionamento e direcionar o cuidado.",
+      "Abordagem que integra neurociência e pedagogia para mediar os processos de aprendizagem, potencializar o desenvolvimento e superar barreiras escolares.",
   },
   {
     icon: Handshake,
@@ -105,7 +105,7 @@ const SPECIALTIES = [
 const FORMACOES = [
   "Especialização em Psicoterapia da Criança e do Adolescente — Sedes Sapientae",
   "Psicopedagogia — Faculdade Oswaldo Cruz",
-  "Pós-graduação em Neuropsicologia",
+  "Pós-graduação em Neuropsicopedagogia",
   "Formação em ABA — Neurosaber",
 ];
 
@@ -201,13 +201,13 @@ function Hero() {
         <Reveal className="flex-1 space-y-6 text-center md:text-left">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-sage-light px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <Sparkles className="h-3.5 w-3.5" />
-            Psicologia Clínica em Perdizes
+            Psicóloga Clínica em Perdizes
           </span>
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Acolhendo emoções, <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">transformando</span> o aprender.
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Psicoterapia e Psicopedagogia clínica para crianças. No Espaço Terapêutico Perdizes, ajudamos os pequenos a construírem uma base sólida para uma vida mais leve e feliz.
+            Psicoterapia clínica para crianças. No Espaço Terapêutico Perdizes, ajudamos os pequenos a construírem uma base sólida para uma vida mais leve e feliz.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
@@ -387,7 +387,7 @@ function Approach() {
               Minha prática clínica integra a <strong className="text-foreground">escuta psicanalítica</strong> com intervenções estruturadas pelo método <strong className="text-foreground">ABA</strong> e pela <strong className="text-foreground">Terapia Comportamental</strong> — uma combinação que me permite atuar tanto na profundidade quanto na superfície do sintoma.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              A psicanálise me oferece o olhar para o sujeito: sua história, seus vínculos, o que o sintoma quer dizer. O ABA e a Terapia Comportamental me oferecem as ferramentas para intervir de forma eficaz e mensurável no comportamento.
+              A psicanálise me oferece o olhar para o sujeito: sua história, seus vínculos, o que o sintoma quer dizer. O Método ABA e a Terapia Comportamental me oferecem as ferramentas para intervir de forma eficaz e mensurável no comportamento.
             </p>
             <p className="leading-relaxed text-muted-foreground">
               Essa integração garante um cuidado completo: <strong className="text-foreground">humano, técnico e eficaz</strong>.
