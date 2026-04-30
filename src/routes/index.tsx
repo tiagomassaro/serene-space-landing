@@ -58,7 +58,21 @@ import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
 import { Reveal } from "@/hooks/use-reveal";
 
+const SEO_DESCRIPTION = "Psicóloga especialista, há 34 anos atendendo crianças e adolescentes, com foco no comportamento e orientação de pais.";
+const PAGE_TITLE = "Espaço Terapêutico Perdizes | Psicóloga Infantil em Perdizes";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: PAGE_TITLE },
+      { name: "description", content: SEO_DESCRIPTION },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: SEO_DESCRIPTION },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: SEO_DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: "https://espacoterapeuticoperdizes.lovable.app/" }],
+  }),
   component: Index,
 });
 
@@ -207,7 +221,7 @@ function Hero() {
             Acolhendo emoções, <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">transformando</span> o aprender.
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Psicoterapia clínica para crianças. No Espaço Terapêutico Perdizes, ajudamos os pequenos a construírem uma base sólida para uma vida mais leve e feliz.
+            {SEO_DESCRIPTION}
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <Button
