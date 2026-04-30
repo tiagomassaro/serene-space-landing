@@ -31,7 +31,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Espaço Terapêutico Perdizes | Psicologia Infantil em Perdizes - SP" },
-      { name: "description", content: "Psicoterapia e psicopedagogia clínica para crianças, adolescentes e família em Perdizes, São Paulo. Atendimento humanizado com 34 anos de experiência. Agende sua consulta." },
+      { name: "description", content: "Psicóloga especialista, há 34 anos atendendo crianças e adolescentes, com foco no comportamento e orientação de pais." },
       { name: "keywords", content: "psicóloga Perdizes, psicologia infantil São Paulo, psicopedagogia clínica, neuropsicologia infantil, terapia para crianças Perdizes, TEA, TDAH, psicóloga infantil SP" },
       { name: "author", content: "Maria Colomba Raccuia Ferreira" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
