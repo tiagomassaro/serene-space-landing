@@ -43,7 +43,7 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#A3B5A6" },
       // Open Graph
       { property: "og:title", content: "Espaço Terapêutico Perdizes | Psicologia Infantil em SP" },
-      { property: "og:description", content: "Psicoterapia e psicopedagogia clínica para crianças, adolescentes e família. Atendimento acolhedor em Perdizes, São Paulo." },
+      { property: "og:description", content: "Psicóloga especialista, há 34 anos atendendo crianças e adolescentes, com foco no comportamento e orientação de pais." },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "Espaço Terapêutico Perdizes" },
@@ -55,7 +55,7 @@ export const Route = createRootRoute({
       // Twitter
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Espaço Terapêutico Perdizes | Psicologia Infantil em SP" },
-      { name: "twitter:description", content: "Psicoterapia e psicopedagogia clínica para crianças, adolescentes e família em Perdizes, São Paulo." },
+      { name: "twitter:description", content: "Psicóloga especialista, há 34 anos atendendo crianças e adolescentes, com foco no comportamento e orientação de pais." },
       { name: "twitter:image", content: "https://espacoterapeuticoperdizes.lovable.app/og-image.png" },
     ],
     links: [
@@ -74,7 +74,7 @@ export const Route = createRootRoute({
           "@context": "https://schema.org",
           "@type": ["LocalBusiness", "MedicalBusiness", "Psychologist"],
           "name": "Espaço Terapêutico Perdizes",
-          "description": "Psicoterapia e psicopedagogia clínica para crianças, adolescentes e família em Perdizes, São Paulo.",
+          "description": "Psicóloga especialista, há 34 anos atendendo crianças e adolescentes, com foco no comportamento e orientação de pais.",
           "url": "https://espacoterapeuticoperdizes.lovable.app/",
           "image": "https://espacoterapeuticoperdizes.lovable.app/og-image.png",
           "telephone": "+55-11-97089-1810",
