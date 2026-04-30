@@ -246,10 +246,10 @@ function Specialties() {
         </Reveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SPECIALTIES.map((s, i) => (
-            <Reveal key={s.title} delay={i * 80}>
-            <Card className="group relative overflow-hidden rounded-2xl border-border/50 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 tap-press">
+            <Reveal key={s.title} delay={i * 80} className="h-full">
+            <Card className="group relative flex h-full overflow-hidden rounded-2xl border-border/50 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 tap-press">
               <span className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
-              <CardContent className="flex flex-col items-center p-8 text-center">
+              <CardContent className="flex flex-1 flex-col items-center p-8 text-center">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-medium to-sage-soft transition-transform duration-500 group-hover:scale-110">
                   <s.icon className="h-7 w-7 text-primary" />
                 </div>
