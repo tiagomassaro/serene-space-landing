@@ -761,6 +761,19 @@ function WhatsAppFloat() {
   );
 }
 
+/* ─── Divider ─── */
+function SectionDivider() {
+  return (
+    <div className="mx-auto max-w-6xl px-4" aria-hidden>
+      <div className="section-divider my-2">
+        <span className="section-divider-mark">
+          <Sparkles className="h-3.5 w-3.5" />
+        </span>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Page ─── */
 function Index() {
   return (
@@ -768,13 +781,21 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <SectionDivider />
         <About />
+        <SectionDivider />
         <Specialties />
+        <SectionDivider />
         <AreasAtuacao />
+        <SectionDivider />
         <Approach />
+        <SectionDivider />
         <Environments />
+        <SectionDivider />
         <Testimonials />
+        <SectionDivider />
         <BookingForm />
+        <SectionDivider />
         <Faq />
       </main>
       <Footer />
