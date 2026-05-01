@@ -53,6 +53,14 @@ import {
   BookOpen,
   Activity,
   Handshake,
+  Home,
+  User,
+  Star,
+  Compass,
+  Lightbulb,
+  Trees,
+  HelpCircle,
+  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
@@ -81,13 +89,14 @@ const WHATSAPP_NUMBER = "5511970891810";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.`;
 
 const NAV_ITEMS = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre Mim", href: "#sobre" },
-  { label: "Especialidades", href: "#especialidades" },
-  { label: "Áreas de Atuação", href: "#areas" },
-  { label: "Abordagem", href: "#abordagem" },
-  { label: "Ambientes", href: "#ambientes" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Início", href: "#inicio", icon: Home },
+  { label: "Sobre Mim", href: "#sobre", icon: User },
+  { label: "Especialidades", href: "#especialidades", icon: Heart },
+  { label: "Áreas de Atuação", href: "#areas", icon: Compass },
+  { label: "Abordagem", href: "#abordagem", icon: Lightbulb },
+  { label: "Ambientes", href: "#ambientes", icon: Trees },
+  { label: "Depoimentos", href: "#depoimentos", icon: Star },
+  { label: "FAQ", href: "#faq", icon: HelpCircle },
 ];
 
 const SPECIALTIES = [
@@ -181,22 +190,110 @@ function Header() {
         {/* Mobile nav */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative md:hidden h-11 w-11 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 ring-1 ring-primary/20 hover:from-primary/20 hover:to-primary/10 transition-all duration-300 hover:scale-105 active:scale-95"
+              aria-label="Abrir menu"
+            >
+              <Menu className="h-5 w-5 text-primary" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-background">
-            <SheetTitle className="font-display">Menu</SheetTitle>
-            <nav className="mt-8 flex flex-col gap-6">
-              {NAV_ITEMS.map((item) => (
-                <button key={item.href} onClick={() => { scrollTo(item.href); setOpen(false); }} className="text-left text-lg font-medium text-foreground">
-                  {item.label}
-                </button>
-              ))}
-              <Button onClick={() => { scrollTo("#agendar"); setOpen(false); }} className="mt-4 rounded-2xl bg-primary text-primary-foreground tap-press-cta">
-                Agendar Consulta
-              </Button>
-            </nav>
+          <SheetContent
+            side="right"
+            className="w-[88vw] max-w-sm overflow-y-auto border-l border-primary/10 bg-gradient-to-br from-background via-background to-sage-light/40 p-0"
+          >
+            {/* Decorative blobs */}
+            <div
+              className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-gold-light/40 blur-3xl"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute -left-16 bottom-32 h-56 w-56 rounded-full bg-sage-soft/40 blur-3xl"
+              aria-hidden
+            />
+
+            <div className="relative flex h-full flex-col p-6">
+              <SheetTitle asChild>
+                <div className="mb-6 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/30">
+                    <Sparkles className="h-5 w-5 text-primary-foreground" />
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-primary">
+                      Espaço Terapêutico
+                    </span>
+                    <span className="font-display text-lg font-semibold text-foreground">
+                      Menu
+                    </span>
+                  </div>
+                </div>
+              </SheetTitle>
+
+              <div className="mb-6 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+              <nav className="flex flex-col gap-1.5">
+                {NAV_ITEMS.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.href}
+                      onClick={() => {
+                        scrollTo(item.href);
+                        setOpen(false);
+                      }}
+                      style={{
+                        animation: `fade-in 0.4s ease-out ${i * 60}ms both`,
+                      }}
+                      className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-transparent bg-card/40 px-4 py-3 text-left transition-all duration-300 hover:border-primary/20 hover:bg-card hover:shadow-md hover:shadow-primary/10 active:scale-[0.98]"
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-primary/10 transition-all duration-300 group-hover:from-primary group-hover:to-primary/80 group-hover:ring-primary/40 group-hover:shadow-md group-hover:shadow-primary/30">
+                        <Icon className="h-[18px] w-[18px] text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                      </span>
+                      <span className="flex-1 font-display text-[15px] font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                        {item.label}
+                      </span>
+                      <ArrowRight className="h-4 w-4 -translate-x-1 text-primary/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary" />
+                    </button>
+                  );
+                })}
+              </nav>
+
+              <div className="mt-auto pt-8">
+                <Button
+                  onClick={() => {
+                    scrollTo("#agendar");
+                    setOpen(false);
+                  }}
+                  className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-primary to-primary/85 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 tap-press-cta"
+                >
+                  <CalendarIcon className="relative z-10 mr-2 h-4 w-4" />
+                  <span className="relative z-10">Agendar Consulta</span>
+                  <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+                </Button>
+
+                <div className="mt-4 flex items-center justify-center gap-3">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                  >
+                    <Instagram className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
