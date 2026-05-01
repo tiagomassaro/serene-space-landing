@@ -184,7 +184,7 @@ export function Testimonials() {
   return (
     <section
       id="depoimentos"
-      className="relative overflow-hidden bg-sage-light py-16 md:py-24"
+      className="relative overflow-hidden py-16 md:py-24"
     >
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"

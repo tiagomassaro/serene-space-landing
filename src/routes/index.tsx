@@ -348,8 +348,7 @@ function Hero() {
 /* ─── Especialidades ─── */
 function Specialties() {
   return (
-    <section id="especialidades" className="relative bg-sage-light py-16 md:py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+    <section id="especialidades" className="relative py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">O que ofereço</span>
@@ -380,9 +379,9 @@ function Specialties() {
 /* ─── Sobre Mim ─── */
 function About() {
   return (
-    <section id="sobre" className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <section id="sobre" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
-      <div className="relative flex flex-col items-center gap-12 md:flex-row md:gap-16 md:items-start">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row md:gap-16 md:items-start">
         <Reveal className="flex justify-center md:w-1/3 md:sticky md:top-24">
           <div className="relative">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
@@ -431,7 +430,6 @@ function About() {
 function AreasAtuacao() {
   return (
     <section id="areas" className="relative bg-sage-light py-16 md:py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-6xl px-4">
         <Reveal className="mb-10 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Demandas atendidas</span>
@@ -547,8 +545,7 @@ function Approach() {
 /* ─── FAQ ─── */
 function Faq() {
   return (
-    <section id="faq" className="relative bg-sage-light py-16 md:py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+    <section id="faq" className="relative py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4">
         <Reveal className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Dúvidas</span>
@@ -612,7 +609,7 @@ function BookingForm() {
   }
 
   return (
-    <section id="agendar" className="relative overflow-hidden py-16 md:py-24">
+    <section id="agendar" className="relative overflow-hidden bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
       <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gold-light blur-3xl opacity-50" aria-hidden />
       <div className="relative mx-auto max-w-xl px-4">
@@ -764,6 +761,19 @@ function WhatsAppFloat() {
   );
 }
 
+/* ─── Divider ─── */
+function SectionDivider() {
+  return (
+    <div className="mx-auto max-w-6xl px-4" aria-hidden>
+      <div className="section-divider my-2">
+        <span className="section-divider-mark">
+          <Sparkles className="h-3.5 w-3.5" />
+        </span>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Page ─── */
 function Index() {
   return (
@@ -771,13 +781,21 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <SectionDivider />
         <About />
+        <SectionDivider />
         <Specialties />
+        <SectionDivider />
         <AreasAtuacao />
+        <SectionDivider />
         <Approach />
+        <SectionDivider />
         <Environments />
+        <SectionDivider />
         <Testimonials />
+        <SectionDivider />
         <BookingForm />
+        <SectionDivider />
         <Faq />
       </main>
       <Footer />
