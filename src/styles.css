@@ -180,3 +180,54 @@
   .tap-press-soft:active,
   .tap-press-cta:active { transform: none; filter: none; }
 }
+
+/* ─── Divisor decorativo entre seções ─── */
+.section-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    color-mix(in oklab, var(--primary) 25%, transparent) 35%,
+    color-mix(in oklab, var(--accent) 35%, transparent) 50%,
+    color-mix(in oklab, var(--primary) 25%, transparent) 65%,
+    transparent 100%
+  );
+}
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--accent) 70%, transparent);
+  transform: translateY(-50%);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--accent) 50%, transparent);
+}
+.section-divider::before {
+  left: calc(50% - 60px);
+  background: color-mix(in oklab, var(--primary) 60%, transparent);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+.section-divider::after {
+  left: calc(50% + 54px);
+}
+.section-divider .section-divider-mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: var(--background);
+  color: color-mix(in oklab, var(--accent) 90%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 25%, transparent);
+  box-shadow: 0 4px 14px -6px color-mix(in oklab, var(--primary) 35%, transparent);
+}
