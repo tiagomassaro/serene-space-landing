@@ -348,8 +348,7 @@ function Hero() {
 /* ─── Especialidades ─── */
 function Specialties() {
   return (
-    <section id="especialidades" className="relative bg-sage-light py-16 md:py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden />
+    <section id="especialidades" className="relative py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">O que ofereço</span>
