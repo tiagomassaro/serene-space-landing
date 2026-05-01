@@ -53,6 +53,14 @@ import {
   BookOpen,
   Activity,
   Handshake,
+  Home,
+  User,
+  Star,
+  Compass,
+  Lightbulb,
+  Trees,
+  HelpCircle,
+  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Environments } from "@/components/Environments";
@@ -81,13 +89,14 @@ const WHATSAPP_NUMBER = "5511970891810";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.`;
 
 const NAV_ITEMS = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre Mim", href: "#sobre" },
-  { label: "Especialidades", href: "#especialidades" },
-  { label: "Áreas de Atuação", href: "#areas" },
-  { label: "Abordagem", href: "#abordagem" },
-  { label: "Ambientes", href: "#ambientes" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Início", href: "#inicio", icon: Home },
+  { label: "Sobre Mim", href: "#sobre", icon: User },
+  { label: "Especialidades", href: "#especialidades", icon: Heart },
+  { label: "Áreas de Atuação", href: "#areas", icon: Compass },
+  { label: "Abordagem", href: "#abordagem", icon: Lightbulb },
+  { label: "Ambientes", href: "#ambientes", icon: Trees },
+  { label: "Depoimentos", href: "#depoimentos", icon: Star },
+  { label: "FAQ", href: "#faq", icon: HelpCircle },
 ];
 
 const SPECIALTIES = [
