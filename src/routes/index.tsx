@@ -201,38 +201,38 @@ function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[88vw] max-w-sm overflow-y-auto border-l border-primary/10 bg-gradient-to-br from-background via-background to-sage-light/40 p-0"
+            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/10 bg-gradient-to-br from-background via-background to-sage-light/40 p-0 [&>button]:z-50 [&>button]:bg-card/80 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-primary/20 [&>button]:opacity-100 [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:transition-colors"
           >
             {/* Decorative blobs */}
             <div
-              className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-gold-light/40 blur-3xl"
+              className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gold-light/40 blur-3xl"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute -left-16 bottom-32 h-56 w-56 rounded-full bg-sage-soft/40 blur-3xl"
+              className="pointer-events-none absolute -left-16 bottom-24 h-40 w-40 rounded-full bg-sage-soft/40 blur-3xl"
               aria-hidden
             />
 
-            <div className="relative flex h-full flex-col p-6">
+            <div className="relative flex h-full flex-col p-5">
               <SheetTitle asChild>
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/30">
-                    <Sparkles className="h-5 w-5 text-primary-foreground" />
+                <div className="mb-4 flex items-center gap-2.5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/30">
+                    <Sparkles className="h-4 w-4 text-primary-foreground" />
                   </span>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-primary">
+                    <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-primary">
                       Espaço Terapêutico
                     </span>
-                    <span className="font-display text-lg font-semibold text-foreground">
+                    <span className="font-display text-base font-semibold text-foreground">
                       Menu
                     </span>
                   </div>
                 </div>
               </SheetTitle>
 
-              <div className="mb-6 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="mb-3 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-              <nav className="flex flex-col gap-1.5">
+              <nav className="flex flex-col gap-1">
                 {NAV_ITEMS.map((item, i) => {
                   const Icon = item.icon;
                   return (
@@ -245,40 +245,40 @@ function Header() {
                       style={{
                         animation: `fade-in 0.4s ease-out ${i * 60}ms both`,
                       }}
-                      className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-transparent bg-card/40 px-4 py-3 text-left transition-all duration-300 hover:border-primary/20 hover:bg-card hover:shadow-md hover:shadow-primary/10 active:scale-[0.98]"
+                      className="group relative flex items-center gap-2.5 overflow-hidden rounded-xl border border-transparent bg-card/40 px-3 py-2 text-left transition-all duration-300 hover:border-primary/20 hover:bg-card hover:shadow-md hover:shadow-primary/10 active:scale-[0.98]"
                     >
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-primary/10 transition-all duration-300 group-hover:from-primary group-hover:to-primary/80 group-hover:ring-primary/40 group-hover:shadow-md group-hover:shadow-primary/30">
-                        <Icon className="h-[18px] w-[18px] text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-primary/10 transition-all duration-300 group-hover:from-primary group-hover:to-primary/80 group-hover:ring-primary/40 group-hover:shadow-md group-hover:shadow-primary/30">
+                        <Icon className="h-4 w-4 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
                       </span>
-                      <span className="flex-1 font-display text-[15px] font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                      <span className="flex-1 font-display text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
                         {item.label}
                       </span>
-                      <ArrowRight className="h-4 w-4 -translate-x-1 text-primary/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary" />
+                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-primary/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary" />
                     </button>
                   );
                 })}
               </nav>
 
-              <div className="mt-auto pt-8">
+              <div className="mt-auto pt-4">
                 <Button
                   onClick={() => {
                     scrollTo("#agendar");
                     setOpen(false);
                   }}
-                  className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-primary to-primary/85 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 tap-press-cta"
+                  className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary to-primary/85 py-4 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 tap-press-cta"
                 >
                   <CalendarIcon className="relative z-10 mr-2 h-4 w-4" />
                   <span className="relative z-10">Agendar Consulta</span>
                   <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
                 </Button>
 
-                <div className="mt-4 flex items-center justify-center gap-3">
+                <div className="mt-3 flex items-center justify-center gap-3">
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
                   >
                     <MessageCircle className="h-4 w-4" />
                   </a>
@@ -287,7 +287,7 @@ function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
                   >
                     <Instagram className="h-4 w-4" />
                   </a>
