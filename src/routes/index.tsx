@@ -380,9 +380,9 @@ function Specialties() {
 /* ─── Sobre Mim ─── */
 function About() {
   return (
-    <section id="sobre" className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <section id="sobre" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
-      <div className="relative flex flex-col items-center gap-12 md:flex-row md:gap-16 md:items-start">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row md:gap-16 md:items-start">
         <Reveal className="flex justify-center md:w-1/3 md:sticky md:top-24">
           <div className="relative">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
