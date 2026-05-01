@@ -609,7 +609,7 @@ function BookingForm() {
   }
 
   return (
-    <section id="agendar" className="relative overflow-hidden py-16 md:py-24">
+    <section id="agendar" className="relative overflow-hidden bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
       <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gold-light blur-3xl opacity-50" aria-hidden />
       <div className="relative mx-auto max-w-xl px-4">
