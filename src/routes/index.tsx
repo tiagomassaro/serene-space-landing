@@ -201,21 +201,28 @@ function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            style={{ backgroundColor: "oklch(0.66 0.045 160)" }}
-            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/20 p-0 text-primary-foreground [&>button]:z-50 [&>button]:bg-white/15 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-white/30 [&>button]:text-primary-foreground [&>button]:opacity-100 [&>button]:hover:bg-white/25 [&>button]:transition-colors"
+            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/20 bg-sage-light p-0 [&>button]:z-50 [&>button]:bg-card/80 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-primary/30 [&>button]:text-primary [&>button]:opacity-100 [&>button]:hover:bg-card [&>button]:transition-colors"
           >
             <div className="relative flex h-full flex-col p-5">
               <SheetTitle asChild>
-                <div className="mb-4 flex items-center">
+                <div className="mb-4 flex items-center gap-3">
                   <img
-                    src={headerLogo}
-                    alt="Espaço Terapêutico Perdizes"
-                    className="h-12 w-auto rounded-lg bg-white/90 p-1 shadow-sm"
+                    src={logoPequeno}
+                    alt=""
+                    className="h-10 w-10 shrink-0 rounded-lg object-contain"
                   />
+                  <div className="flex flex-col">
+                    <span className="font-display text-sm font-semibold leading-tight text-foreground">
+                      Espaço Terapêutico
+                    </span>
+                    <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
+                      Menu
+                    </span>
+                  </div>
                 </div>
               </SheetTitle>
 
-              <div className="mb-3 h-px bg-white/20" />
+              <div className="mb-3 h-px bg-primary/15" />
 
               <nav className="flex flex-col gap-1">
                 {NAV_ITEMS.map((item, i) => {
@@ -230,15 +237,15 @@ function Header() {
                       style={{
                         animation: `fade-in 0.4s ease-out ${i * 60}ms both`,
                       }}
-                      className="group relative flex items-center gap-2.5 overflow-hidden rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-left transition-all duration-300 hover:bg-white/20 active:scale-[0.98]"
+                      className="group relative flex items-center gap-2.5 overflow-hidden rounded-xl border border-primary/10 bg-card/70 px-3 py-2 text-left transition-all duration-300 hover:bg-card active:scale-[0.98]"
                     >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/20 transition-all duration-300 group-hover:bg-white/25">
-                        <Icon className="h-4 w-4 text-primary-foreground" />
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage-soft ring-1 ring-primary/15 transition-all duration-300 group-hover:bg-sage-medium">
+                        <Icon className="h-4 w-4 text-primary" />
                       </span>
-                      <span className="flex-1 font-display text-sm font-medium text-primary-foreground">
+                      <span className="flex-1 font-display text-sm font-medium text-foreground">
                         {item.label}
                       </span>
-                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-primary-foreground/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary-foreground" />
+                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-primary/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary" />
                     </button>
                   );
                 })}
@@ -250,7 +257,7 @@ function Header() {
                     scrollTo("#agendar");
                     setOpen(false);
                   }}
-                  className="group relative w-full overflow-hidden rounded-xl bg-white py-4 text-sm font-medium text-primary shadow-lg transition-all duration-500 hover:-translate-y-0.5 hover:bg-white/95 tap-press-cta"
+                  className="group relative w-full overflow-hidden rounded-xl bg-primary py-4 text-sm font-medium text-primary-foreground shadow-lg transition-all duration-500 hover:-translate-y-0.5 hover:bg-primary/90 tap-press-cta"
                 >
                   <CalendarIcon className="relative z-10 mr-2 h-4 w-4" />
                   <span className="relative z-10">Agendar Consulta</span>
@@ -262,7 +269,7 @@ function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-primary-foreground ring-1 ring-white/30 transition-all duration-300 hover:scale-110 hover:bg-white/25"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-card text-primary ring-1 ring-primary/20 transition-all duration-300 hover:scale-110 hover:bg-sage-soft"
                   >
                     <MessageCircle className="h-4 w-4" />
                   </a>
@@ -271,7 +278,7 @@ function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-primary-foreground ring-1 ring-white/30 transition-all duration-300 hover:scale-110 hover:bg-white/25"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-card text-primary ring-1 ring-primary/20 transition-all duration-300 hover:scale-110 hover:bg-sage-soft"
                   >
                     <Instagram className="h-4 w-4" />
                   </a>
