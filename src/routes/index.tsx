@@ -365,16 +365,8 @@ function About() {
   return (
     <section id="sobre" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row md:gap-16 md:items-start">
-        <Reveal className="flex justify-center md:w-1/3 md:sticky md:top-24">
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
-            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
-              <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
-            </div>
-          </div>
-        </Reveal>
-        <Reveal delay={120} className="flex-1 space-y-5 text-center md:text-left">
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-10 px-4">
+        <Reveal className="w-full space-y-5 text-center md:text-left">
           <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Quem sou</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
@@ -404,6 +396,14 @@ function About() {
           <p className="leading-relaxed text-muted-foreground">
             No <strong className="text-foreground">Espaço Terapêutico Perdizes</strong>, cada criança é acolhida com escuta cuidadosa, respeito ao seu tempo e atenção à sua singularidade.
           </p>
+        </Reveal>
+        <Reveal delay={120} className="flex justify-center">
+          <div className="relative">
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
+              <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
