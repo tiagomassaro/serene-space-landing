@@ -289,6 +289,14 @@ function Header() {
 function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden">
+      {/* Background logo with transparency */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden>
+        <img
+          src={logoEspaco}
+          alt=""
+          className="h-full w-full max-w-3xl object-contain opacity-[0.08] md:opacity-[0.10]"
+        />
+      </div>
       {/* Decorative sage accents */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sage-soft blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-gold-light blur-3xl" aria-hidden />
@@ -314,14 +322,6 @@ function Hero() {
               <span className="relative z-10">Agendar pelo WhatsApp</span>
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
             </Button>
-          </div>
-        </Reveal>
-        <Reveal delay={120} className="flex flex-1 justify-center mx-0 ml-0">
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sage-medium via-sage-soft to-gold-light blur-xl opacity-70" aria-hidden />
-            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
-              <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
-            </div>
           </div>
         </Reveal>
       </div>
