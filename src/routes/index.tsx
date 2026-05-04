@@ -308,8 +308,8 @@ function Hero() {
       <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sage-soft blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-gold-light blur-3xl" aria-hidden />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 md:flex-row md:gap-16 md:py-24">
-        <Reveal className="flex-1 space-y-6 text-center md:text-left">
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-12 px-4 py-16 md:py-24">
+        <Reveal className="flex-1 space-y-6 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-sage-light px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <Sparkles className="h-3.5 w-3.5" />
             Psicóloga Clínica em Perdizes
@@ -317,10 +317,10 @@ function Hero() {
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Acolhendo emoções, <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">transformando</span> o aprender.
           </h1>
-          <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
+          <p className="mx-auto max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl">
             {SEO_DESCRIPTION}
           </p>
-          <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button
               onClick={() => scrollTo("#agendar")}
               className="group relative flex items-center gap-2 overflow-hidden rounded-2xl bg-primary px-8 py-6 text-base font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 tap-press-cta"
