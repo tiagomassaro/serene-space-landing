@@ -201,36 +201,21 @@ function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/10 bg-gradient-to-br from-background via-background to-sage-light/40 p-0 [&>button]:z-50 [&>button]:bg-card/80 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-primary/20 [&>button]:opacity-100 [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:transition-colors"
+            style={{ backgroundColor: "oklch(0.66 0.045 160)" }}
+            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/20 p-0 text-primary-foreground [&>button]:z-50 [&>button]:bg-white/15 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-white/30 [&>button]:text-primary-foreground [&>button]:opacity-100 [&>button]:hover:bg-white/25 [&>button]:transition-colors"
           >
-            {/* Decorative blobs */}
-            <div
-              className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gold-light/40 blur-3xl"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -left-16 bottom-24 h-40 w-40 rounded-full bg-sage-soft/40 blur-3xl"
-              aria-hidden
-            />
-
             <div className="relative flex h-full flex-col p-5">
               <SheetTitle asChild>
-                <div className="mb-4 flex items-center gap-2.5">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/30">
-                    <Sparkles className="h-4 w-4 text-primary-foreground" />
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-primary">
-                      Espaço Terapêutico
-                    </span>
-                    <span className="font-display text-base font-semibold text-foreground">
-                      Menu
-                    </span>
-                  </div>
+                <div className="mb-4 flex items-center">
+                  <img
+                    src={headerLogo}
+                    alt="Espaço Terapêutico Perdizes"
+                    className="h-12 w-auto rounded-lg bg-white/90 p-1 shadow-sm"
+                  />
                 </div>
               </SheetTitle>
 
-              <div className="mb-3 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="mb-3 h-px bg-white/20" />
 
               <nav className="flex flex-col gap-1">
                 {NAV_ITEMS.map((item, i) => {
@@ -245,15 +230,15 @@ function Header() {
                       style={{
                         animation: `fade-in 0.4s ease-out ${i * 60}ms both`,
                       }}
-                      className="group relative flex items-center gap-2.5 overflow-hidden rounded-xl border border-transparent bg-card/40 px-3 py-2 text-left transition-all duration-300 hover:border-primary/20 hover:bg-card hover:shadow-md hover:shadow-primary/10 active:scale-[0.98]"
+                      className="group relative flex items-center gap-2.5 overflow-hidden rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-left transition-all duration-300 hover:bg-white/20 active:scale-[0.98]"
                     >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-primary/10 transition-all duration-300 group-hover:from-primary group-hover:to-primary/80 group-hover:ring-primary/40 group-hover:shadow-md group-hover:shadow-primary/30">
-                        <Icon className="h-4 w-4 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/20 transition-all duration-300 group-hover:bg-white/25">
+                        <Icon className="h-4 w-4 text-primary-foreground" />
                       </span>
-                      <span className="flex-1 font-display text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                      <span className="flex-1 font-display text-sm font-medium text-primary-foreground">
                         {item.label}
                       </span>
-                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-primary/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary" />
+                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-primary-foreground/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary-foreground" />
                     </button>
                   );
                 })}
@@ -265,11 +250,10 @@ function Header() {
                     scrollTo("#agendar");
                     setOpen(false);
                   }}
-                  className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary to-primary/85 py-4 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 tap-press-cta"
+                  className="group relative w-full overflow-hidden rounded-xl bg-white py-4 text-sm font-medium text-primary shadow-lg transition-all duration-500 hover:-translate-y-0.5 hover:bg-white/95 tap-press-cta"
                 >
                   <CalendarIcon className="relative z-10 mr-2 h-4 w-4" />
                   <span className="relative z-10">Agendar Consulta</span>
-                  <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
                 </Button>
 
                 <div className="mt-3 flex items-center justify-center gap-3">
@@ -278,7 +262,7 @@ function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-primary-foreground ring-1 ring-white/30 transition-all duration-300 hover:scale-110 hover:bg-white/25"
                   >
                     <MessageCircle className="h-4 w-4" />
                   </a>
@@ -287,7 +271,7 @@ function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-card ring-1 ring-border/60 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-primary-foreground ring-1 ring-white/30 transition-all duration-300 hover:scale-110 hover:bg-white/25"
                   >
                     <Instagram className="h-4 w-4" />
                   </a>
@@ -305,6 +289,14 @@ function Header() {
 function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden">
+      {/* Background logo with transparency */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden>
+        <img
+          src={logoEspaco}
+          alt=""
+          className="h-full w-full max-w-3xl object-contain opacity-[0.08] md:opacity-[0.10]"
+        />
+      </div>
       {/* Decorative sage accents */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sage-soft blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-gold-light blur-3xl" aria-hidden />
@@ -330,14 +322,6 @@ function Hero() {
               <span className="relative z-10">Agendar pelo WhatsApp</span>
               <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
             </Button>
-          </div>
-        </Reveal>
-        <Reveal delay={120} className="flex flex-1 justify-center mx-0 ml-0">
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sage-medium via-sage-soft to-gold-light blur-xl opacity-70" aria-hidden />
-            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
-              <img src={logoEspaco} alt="Espaço Terapêutico Perdizes" className="w-full h-full object-contain rounded-xl shadow-2xl opacity-65" />
-            </div>
           </div>
         </Reveal>
       </div>
@@ -381,16 +365,8 @@ function About() {
   return (
     <section id="sobre" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row md:gap-16 md:items-start">
-        <Reveal className="flex justify-center md:w-1/3 md:sticky md:top-24">
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
-            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
-              <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
-            </div>
-          </div>
-        </Reveal>
-        <Reveal delay={120} className="flex-1 space-y-5 text-center md:text-left">
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-10 px-4">
+        <Reveal className="w-full space-y-5 text-center md:text-left">
           <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Quem sou</span>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
           <p className="leading-relaxed text-muted-foreground">
@@ -420,6 +396,14 @@ function About() {
           <p className="leading-relaxed text-muted-foreground">
             No <strong className="text-foreground">Espaço Terapêutico Perdizes</strong>, cada criança é acolhida com escuta cuidadosa, respeito ao seu tempo e atenção à sua singularidade.
           </p>
+        </Reveal>
+        <Reveal delay={120} className="flex justify-center">
+          <div className="relative">
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
+            <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
+              <img src={fotoSobreMim} alt="Maria Colomba Raccuia Ferreira - Psicóloga Clínica" className="w-full h-full object-cover rounded-xl shadow-2xl opacity-90" />
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
