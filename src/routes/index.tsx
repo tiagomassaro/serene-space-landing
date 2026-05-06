@@ -381,8 +381,12 @@ function About() {
   return (
     <section id="sobre" className="relative bg-sage-light py-16 md:py-24">
       <div className="pointer-events-none absolute right-0 top-20 h-72 w-72 rounded-full bg-sage-soft blur-3xl opacity-60" aria-hidden />
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row md:gap-16 md:items-start">
-        <Reveal className="flex justify-center md:w-1/3 md:sticky md:top-24">
+      <div className="relative mx-auto max-w-6xl px-4">
+        <Reveal className="mb-8 text-center">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Quem sou</span>
+          <h2 className="mt-2 font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
+        </Reveal>
+        <Reveal className="mb-10 flex justify-center">
           <div className="relative">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-sage-medium to-gold-light blur-lg opacity-60" aria-hidden />
             <div className="relative aspect-square w-72 overflow-hidden rounded-3xl bg-primary/20 shadow-xl md:w-96 flex items-center justify-center p-2 ring-1 ring-primary/10 transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 tap-press-soft">
@@ -390,9 +394,7 @@ function About() {
             </div>
           </div>
         </Reveal>
-        <Reveal delay={120} className="flex-1 space-y-5 text-center md:text-left">
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary">Quem sou</span>
-          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Sobre Mim</h2>
+        <Reveal delay={120} className="mx-auto max-w-3xl space-y-5 text-center md:text-left">
           <p className="leading-relaxed text-muted-foreground">
             Sou <strong className="text-foreground">Maria Colomba Raccuia Ferreira</strong>, psicóloga com 34 anos de atuação clínica dedicada ao universo da infância, adolescência e família.
           </p>
