@@ -206,12 +206,7 @@ function Header() {
           >
             <div className="relative flex h-full flex-col p-5">
               <SheetTitle asChild>
-                <div className="mb-6 flex flex-col items-center pt-1">
-                  <div className="mb-3 flex w-full items-center justify-start">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/60 ring-1 ring-primary/15 shadow-sm">
-                      <Sparkles className="h-4 w-4" style={{ color: "oklch(0.45 0.05 160)" }} />
-                    </span>
-                  </div>
+                <div className="mb-4 flex flex-col items-center">
                   <span
                     className="text-[10px] font-semibold uppercase tracking-[0.22em]"
                     style={{ color: "oklch(0.45 0.04 160)" }}
