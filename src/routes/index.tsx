@@ -201,38 +201,35 @@ function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/10 bg-gradient-to-br from-background via-background to-sage-light/40 p-0 [&>button]:z-50 [&>button]:bg-card/80 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-primary/20 [&>button]:opacity-100 [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:transition-colors"
+            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/10 p-0 [&>button]:z-50 [&>button]:bg-white/70 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-primary/20 [&>button]:opacity-100 [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:transition-colors"
+            style={{ backgroundColor: "oklch(0.96 0.018 160)" }}
           >
-            {/* Decorative blobs */}
-            <div
-              className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gold-light/40 blur-3xl"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -left-16 bottom-24 h-40 w-40 rounded-full bg-sage-soft/40 blur-3xl"
-              aria-hidden
-            />
-
             <div className="relative flex h-full flex-col p-5">
               <SheetTitle asChild>
-                <div className="mb-4 flex items-center gap-2.5">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/30">
-                    <Sparkles className="h-4 w-4 text-primary-foreground" />
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-primary">
-                      Espaço Terapêutico
-                    </span>
-                    <span className="font-display text-base font-semibold text-foreground">
-                      Menu
+                <div className="mb-6 flex flex-col items-center pt-1">
+                  <div className="mb-3 flex w-full items-center justify-start">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/60 ring-1 ring-primary/15 shadow-sm">
+                      <Sparkles className="h-4 w-4" style={{ color: "oklch(0.45 0.05 160)" }} />
                     </span>
                   </div>
+                  <span
+                    className="text-[10px] font-semibold uppercase tracking-[0.22em]"
+                    style={{ color: "oklch(0.45 0.04 160)" }}
+                  >
+                    Espaço Terapêutico Perdizes
+                  </span>
+                  <span
+                    className="mt-1 font-display text-3xl font-semibold tracking-tight"
+                    style={{ color: "oklch(0.32 0.05 160)" }}
+                  >
+                    Menu
+                  </span>
                 </div>
               </SheetTitle>
 
-              <div className="mb-3 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="mb-4 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-              <nav className="flex flex-col gap-1">
+              <nav className="flex flex-col gap-2.5">
                 {NAV_ITEMS.map((item, i) => {
                   const Icon = item.icon;
                   return (
@@ -243,17 +240,27 @@ function Header() {
                         setOpen(false);
                       }}
                       style={{
-                        animation: `fade-in 0.4s ease-out ${i * 60}ms both`,
+                        animation: `fade-in 0.45s ease-out ${i * 70}ms both`,
+                        backgroundColor: "oklch(0.985 0.01 160)",
                       }}
-                      className="group relative flex items-center gap-2.5 overflow-hidden rounded-xl border border-transparent bg-card/40 px-3 py-2 text-left transition-all duration-300 hover:border-primary/20 hover:bg-card hover:shadow-md hover:shadow-primary/10 active:scale-[0.98]"
+                      className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-primary/10 px-3.5 py-2.5 text-left transition-all duration-300 hover:border-primary/25 hover:shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)] active:scale-[0.985] hover:[background-color:oklch(0.92_0.025_160)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
                     >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-primary/10 transition-all duration-300 group-hover:from-primary group-hover:to-primary/80 group-hover:ring-primary/40 group-hover:shadow-md group-hover:shadow-primary/30">
-                        <Icon className="h-4 w-4 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
+                      <span
+                        className="menu-icon-float flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-primary/10 transition-all duration-300 group-hover:ring-primary/30"
+                        style={{ animationDelay: `${i * 0.18}s` }}
+                      >
+                        <Icon className="h-[18px] w-[18px]" style={{ color: "oklch(0.50 0.02 160)" }} />
                       </span>
-                      <span className="flex-1 font-display text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                      <span
+                        className="flex-1 text-[15px] font-medium tracking-tight transition-colors duration-300"
+                        style={{ color: "oklch(0.34 0.04 160)", fontFamily: "var(--font-body)" }}
+                      >
                         {item.label}
                       </span>
-                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-primary/0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-primary" />
+                      <ArrowRight
+                        className="h-3.5 w-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                        style={{ color: "oklch(0.45 0.05 160)" }}
+                      />
                     </button>
                   );
                 })}
