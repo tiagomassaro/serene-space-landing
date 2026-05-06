@@ -231,3 +231,15 @@
   border: 1px solid color-mix(in oklab, var(--primary) 25%, transparent);
   box-shadow: 0 4px 14px -6px color-mix(in oklab, var(--primary) 35%, transparent);
 }
+
+/* ─── Menu mobile: flutuação sutil de ícones ─── */
+@keyframes menu-icon-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+.menu-icon-float {
+  animation: menu-icon-float 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-icon-float { animation: none; }
+}
