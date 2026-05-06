@@ -201,7 +201,7 @@ function Header() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/10 p-0 [&>button]:z-50 [&>button]:bg-white/70 [&>button]:backdrop-blur [&>button]:rounded-full [&>button]:p-1.5 [&>button]:ring-1 [&>button]:ring-primary/20 [&>button]:opacity-100 [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:transition-colors"
+            className="w-[86vw] max-w-sm overflow-y-auto border-l border-primary/10 p-0 [&>button]:z-50 [&>button]:bg-transparent [&>button]:rounded-full [&>button]:p-0 [&>button]:ring-0 [&>button]:opacity-70 [&>button]:hover:opacity-100 [&>button]:hover:bg-transparent [&>button>svg]:h-3.5 [&>button>svg]:w-3.5 [&>button]:transition-opacity"
             style={{ backgroundColor: "oklch(0.96 0.018 160)" }}
           >
             <div className="relative flex h-full flex-col p-5">
